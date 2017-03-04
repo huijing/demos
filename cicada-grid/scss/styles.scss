@@ -1,0 +1,145 @@
+// General styles
+@import url('https://fonts.googleapis.com/css?family=Eczar:700|Gentium+Basic');
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 1em;
+  font-family: 'Gentium Basic', serif;
+  color: white;
+  background-color: darkslateblue;
+  font-size: 1.2em;
+  line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+  border-top-left-radius: 87%;
+  border-top-right-radius: 91%;
+  border-bottom-left-radius: 100%;
+  border-bottom-right-radius: 98%;
+}
+
+h1 {
+  font-family: 'Eczar', serif;
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 0.25em;
+}
+
+.emoji {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.grid__item:nth-child(2n+1) img {
+  border-top-left-radius: 59%;
+  border-top-right-radius: 52%;
+  border-bottom-left-radius: 59%;
+  border-bottom-right-radius: 56%;
+  transform: rotate(-6deg);
+}
+
+.grid__item:nth-child(3n+2) img {
+  border-top-left-radius: 84%;
+  border-top-right-radius: 94%;
+  border-bottom-left-radius: 72%;
+  border-bottom-right-radius: 83%;
+  transform: rotate(5deg);
+}
+
+.grid__item:nth-child(5n+3) img {
+  border-top-left-radius: 73%;
+  border-top-right-radius: 100%;
+  border-bottom-left-radius: 100%;
+  border-bottom-right-radius: 82%;
+  transform: rotate(7deg);
+}
+
+.grid__item:nth-child(7n+5) img {
+  border-top-left-radius: 93%;
+  border-top-right-radius: 90%;
+  border-bottom-left-radius: 78%;
+  border-bottom-right-radius: 85%;
+  transform: rotate(-2deg);
+}
+
+.grid__item:nth-child(11n+7) img {
+  border-top-left-radius: 68%;
+  border-top-right-radius: 68%;
+  border-bottom-left-radius: 53%;
+  border-bottom-right-radius: 83%;
+  transform: rotate(-2deg);
+}
+
+// Grid styles
+.example-wrapper::before {
+  content: 'This example requires a browser that supports CSS Grid, like Firefox Nightly. If your browser did support CSS Grid, you would have seen an awesome responsive grid of kittens. But here\'s an image of kitten anyway.';
+  display: inline-block;
+  margin-bottom: 1em;
+  line-height: 1.5;
+}
+
+.example-wrapper::after {
+  content: url('http://placekitten.com/550/550');
+  display: block;
+  text-align: center;
+}
+
+.example-wrapper > * {
+  display: none;
+}
+
+.example-wrapper {
+  max-width: 40em;
+  margin: 0 auto;
+}
+
+@supports (display: grid) and (not(display: -ms-grid)) {
+  .example-wrapper::before,
+  .example-wrapper::after {
+    content: none;
+  }
+  
+  .example-wrapper {
+    display: block;
+    max-width: none;
+  }
+ 
+  .container {
+    margin: 2em auto;
+    max-width: 54em;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20ch, 1fr));
+    grid-gap: 1em 0.5em;
+  }
+
+  .grid__item:nth-child(2n+1),
+  .grid__item:nth-child(5n) {
+    align-self: start;
+  }
+
+  .grid__item:nth-child(3n+2),
+  .grid__item:nth-child(2n) {
+    align-self: center;
+  }
+
+  .grid__item:nth-child(5n+3),
+  .grid__item:nth-child(3n) {
+    align-self: end;
+  }
+}

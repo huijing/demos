@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css?family=Gravitas+One');
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 2em;
+  background: linear-gradient(45deg, #232526 0, #414345 100%);
+  color: #fff;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1em;
+  font-size: 2.5em;
+  font-family: 'Gravitas One', serif;
+}
+
+.box {
+  height: 45vmin;
+  width: 40vmin;
+}
+
+.example-wrapper::before {
+  content: 'This example requires a browser that supports CSS Grid, like Firefox Nightly. If your browser did support CSS Grid, you would have seen an awesome grid of overlapping geometric shapes. Here\'s an image of kitten instead.';
+  display: inline-block;
+  margin-bottom: 1em;
+  line-height: 1.5;
+}
+
+.example-wrapper::after {
+  content: url('https://placekitten.com/500/500?image=5');
+  display: block;
+  text-align: center;
+}
+
+.example-wrapper > * {
+  display: none;
+}
+
+.example-wrapper {
+  max-width: 40em;
+  margin: 0 auto;
+}
+
+@supports (display: grid) and (not(display: -ms-grid)) {
+  .example-wrapper::before,
+  .example-wrapper::after {
+    content: none;
+  }
+  
+  .example-wrapper {
+    display: block;
+    max-width: none;
+  }
+
+  .grid {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 50vmin 50vmin;
+    grid-template-rows: 50vmin 50vmin;
+  }
+
+  .a {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+    align-self: end;
+
+    background-color: #0E3D59;
+  }
+
+  .b {
+    grid-column: 1;
+    grid-row: 1;
+    z-index: 10;
+
+    background-color: #88A61B;
+    border-radius: 50%;
+    text-align: center;
+  }
+
+  .c {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: start;
+
+    margin-left: -3em;
+    background-color: #F29F05;
+    text-align: right;
+    clip-path: polygon(100% 0, 0 0, 100% 100%);
+  }
+
+  .d {
+    grid-column: 2;
+    grid-row: 2;
+    justify-self: end;
+    align-self: start;
+
+    background-color: #F25C05;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    padding: 1em;
+  }
+
+  .e {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+    justify-self: center;
+    align-self: center;
+    z-index: 5;
+
+    background-color: #D92525;
+  }
+}

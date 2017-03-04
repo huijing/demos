@@ -1,0 +1,33 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Overlapping Grid Items</title>
+  <meta name="description" content="One of the cool things about CSS grid is we now have a legit way to overlap items. For the longest time, overlapping elements involved absolute positioning which was tricky because it took the element out of the document flow and things wouldn't align properly and it was just too much trouble. But now, grid placement properties let's us layer elements if we so choose, and they all still participate in the document flow.">
+  <meta name="author" content="Chen Hui Jing">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <h1>Overlapping Grid Items</h1>
+  <div class="example-wrapper">
+    <div class="grid">
+      <div class="grid__item a"><div class="box"></div></div>
+      <div class="grid__item b"></div>
+      <div class="grid__item c"><div class="box"></div></div>
+      <div class="grid__item d"><div class="box"></div></div>
+      <div class="grid__item e"><div class="box"></div></div>
+    </div>
+  </div>
+</body>
+
+</html>

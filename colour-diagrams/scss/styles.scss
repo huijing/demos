@@ -1,0 +1,337 @@
+@import url('https://fonts.googleapis.com/css?family=Old+Standard+TT:400,400i');
+
+$red: #c10909;
+$orange: #e13e00;
+$yellow: #e3ac00;
+$green: #5e9077;
+$olive: #83652d;
+$blue: #3889b7;
+$purple: #4f437d;
+$brown: #752435;
+$slate: #38416f;
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  background-image: radial-gradient(#e2d0b3, #e6ccaa);
+  font-family: 'Old Standard TT', serif;
+  padding: 0.5em;
+}
+
+// Responsive typography
+$min-width: 320;
+$max-width: 960;
+$min-font: 18;
+$max-font: 22;
+
+:root {
+  font-size: #{$min-font}px;
+}
+
+@media (min-width: #{$min-width}px) and (max-width: #{$max-width}px) {
+  :root {
+    font-size: calc( #{$min-font}px + (#{$max-font} - #{$min-font}) * ( (100vw - #{$min-width}px) / ( #{$max-width} - #{$min-width})));
+  }
+}
+
+@media (min-width: #{$max-width}px) {
+  :root {
+    font-size: #{$max-font}px;
+  }
+}
+
+h1 {
+  text-align: center;
+  font-size: 5vw;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  text-align: center;
+  font-size: 3vw;
+  margin-bottom: 0.5em;
+}
+
+p {
+  line-height: 1.2;
+  margin-bottom: 1em;
+}
+
+em {
+  font-style: italic;
+}
+
+.example-wrapper::before {
+  content: 'This example requires a browser that supports CSS Grid, like Firefox Nightly. If your browser did support CSS Grid, you would have seen something that resembled the image below, except recreated in HTML and CSS instead.';
+  display: inline-block;
+  margin-bottom: 1em;
+  line-height: 1.2;
+}
+
+.example-wrapper::after {
+  content: url('https://upload.wikimedia.org/wikipedia/commons/1/15/Color_diagram_Charles_Hayter.jpg');
+  display: block;
+  text-align: center;
+}
+
+.example-wrapper > * {
+  display: none;
+}
+
+.example-wrapper {
+  background: $red;
+  padding: 5vmin;
+  margin-bottom: 1em;
+}
+
+.axioms {
+  max-width: 40em;
+  margin: 0 auto;
+}
+
+@supports (display: grid) and (not(display: -ms-grid)) {
+  .example-wrapper::before,
+  .example-wrapper::after {
+    content: none;
+  }
+
+  .example-wrapper {
+    display: block;
+    background-color: inherit;
+    border: 0.2vw solid;
+    
+    p {
+      font-style: italic;
+      font-size: 1.5vw;
+      margin: 0;
+    }
+  }
+  
+  .grid1 {
+    display: grid;
+    grid-template-columns: repeat(3, 2vw 5vw 5vw 5vw 5vw 5vw 2vw);
+    grid-auto-rows: 15vw;
+    grid-gap: 0.1vw;
+    justify-content: center;
+
+    margin-bottom: 1em;
+  }
+
+  .grid__item {
+    border-radius: 50%;
+    border: 0.1vw solid;
+    box-shadow: 0px 0px 0px 0.4vw white, 0px 0px 0px 0.5vw black;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .yel1 {
+    grid-row: 1;
+    grid-column: 3 / span 3;
+    background-color: $yellow;
+  }
+
+  .yel2 {
+    grid-row: 2;
+    grid-column: 2 / span 3;
+    background-color: $yellow;
+    mix-blend-mode: soft-light;
+  }
+
+  .red1 {
+    grid-row: 2;
+    grid-column: 4 / span 3;
+    background-color: $red;
+  }
+
+  .org1 {
+    grid-row: 3;
+    grid-column: 3 / span 3;
+    background-color: $orange;
+  }
+
+  .org2 {
+    grid-row: 4;
+    grid-column: 2 / span 3;
+    background-color: $orange;
+    mix-blend-mode: soft-light;
+  }
+
+  .grn1 {
+    grid-row: 4;
+    grid-column: 4 / span 3;
+    background-color: $green;
+  }
+
+  .olv1 {
+    grid-row: 5;
+    grid-column: 3 / span 3;
+    background-color: $olive;
+  }
+
+  .red2 {
+    grid-row: 1;
+    grid-column: 10 / span 3;
+    background-color: $red;
+  }
+
+  .yel3 {
+    grid-row: 2;
+    grid-column: 9 / span 3;
+    background-color: $yellow;
+    mix-blend-mode: soft-light;
+  }
+
+  .blu1 {
+    grid-row: 2;
+    grid-column: 11 / span 3;
+    background-color: $blue;
+  }
+
+  .grn2 {
+    grid-row: 3;
+    grid-column: 10 / span 3;
+    background-color: $green;
+  }
+
+  .org3 {
+    grid-row: 4;
+    grid-column: 9 / span 3;
+    background-color: $orange;
+    mix-blend-mode: soft-light;
+  }
+
+  .prp1 {
+    grid-row: 4;
+    grid-column: 11 / span 3;
+    background-color: $purple;
+  }
+
+  .brn1 {
+    grid-row: 5;
+    grid-column: 10 / span 3;
+    background-color: $brown;
+  }
+
+  .blu2 {
+    grid-row: 1;
+    grid-column: 17 / span 3;
+    background-color: $blue;
+  }
+
+  .red3 {
+    grid-row: 2;
+    grid-column: 16 / span 3;
+    background-color: $red;
+    mix-blend-mode: soft-light;
+  }
+
+  .blu3 {
+    grid-row: 2;
+    grid-column: 18 / span 3;
+    background-color: $blue;
+  }
+
+  .prp2 {
+    grid-row: 3;
+    grid-column: 17 / span 3;
+    background-color: $purple;
+  }
+
+  .grn3 {
+    grid-row: 4;
+    grid-column: 16 / span 3;
+    background-color: $green;
+    mix-blend-mode: soft-light;
+  }
+
+  .prp3 {
+    grid-row: 4;
+    grid-column: 18 / span 3;
+    background-color: $purple;
+  }
+
+  .slt1 {
+    grid-row: 5;
+    grid-column: 17 / span 3;
+    background-color: $slate;
+  }
+  
+  .grid2 {
+    display: grid;
+    grid-template-columns: repeat(3, 0.5vw 6vw 6vw 6vw 6vw 6vw 0.5vw);
+    grid-auto-rows: 9vw;
+    grid-gap: 0.1vw;
+    justify-content: center;
+  }
+
+  .yel4 {
+    grid-row: 1 / span 2;
+    grid-column: 2 / span 3;
+    background-color: $yellow;
+    mix-blend-mode: soft-light;
+  }
+
+  .red4 {
+    grid-row: 1 / span 2;
+    grid-column: 4 / span 3;
+    background-color: $red;
+    mix-blend-mode: soft-light;
+  }
+
+  .blu4 {
+    grid-row: 2 / span 2;
+    grid-column: 3 / span 3;
+    background-color: $blue;
+  }
+
+  .org4 {
+    grid-row: 1 / span 2;
+    grid-column: 10 / span 3;
+    background-color: $orange;
+    mix-blend-mode: soft-light;
+  }
+
+  .grn4 {
+    grid-row: 2 / span 2;
+    grid-column: 9 / span 3;
+    background-color: $green;
+  }
+
+  .prp4 {
+    grid-row: 2 / span 2;
+    grid-column: 11 / span 3;
+    background-color: $purple;
+    mix-blend-mode: soft-light;
+  }
+
+  .olv2 {
+    grid-row: 1 / span 2;
+    grid-column: 16 / span 3;
+    background-color: $olive;
+    mix-blend-mode: soft-light;
+  }
+
+  .brn2 {
+    grid-row: 1 / span 2;
+    grid-column: 18 / span 3;
+    background-color: $brown;
+    mix-blend-mode: soft-light;
+  }
+
+  .slt2 {
+    grid-row: 2 / span 2;
+    grid-column: 17 / span 3;
+    background-color: $slate;
+  }
+}
