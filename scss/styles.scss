@@ -1,3 +1,15 @@
+@font-face {
+  font-family: 'Magnetic Pro Black';
+  src: url('../../fonts/magnetic-pro-black.eot');
+  src: url('../../fonts/magnetic-pro-black.eot?#iefix') format('embedded-opentype'),
+     url('../../fonts/magnetic-pro-black.woff2') format('woff2'),
+     url('../../fonts/magnetic-pro-black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+}
+
+$base-font: 'Magnetic Pro', 'HeiTi SC Light', 'Microsoft YaHei', sans-serif;
+
 $colours: (
   green: #7ED321,
   red: #ff595e,
@@ -30,6 +42,10 @@ html {
 * {
   margin: 0;
   padding: 0;
+}
+
+body {
+  font-family: $base-font;
 }
 
 main {
