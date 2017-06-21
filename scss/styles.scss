@@ -126,27 +126,6 @@ label {
       transform: rotate(-45deg);
     }
 
-    @supports (animation: zoom 5s infinite) {
-      input {
-        display: inline-block;
-        margin-right: 0.5em;
-        position: absolute;
-        z-index: 1;
-        right: 22.75em;
-        top: 1em;
-      }
-
-      label {
-        display: inline-block;
-        color: white;
-        cursor: pointer;
-        z-index: 1;
-        position: absolute;
-        top: 0.5em;
-        right: 0.5em;
-      }
-    }
-
     .starfield,
     .stars {
       overflow: hidden;
@@ -203,6 +182,29 @@ label {
     section:first-child {
       grid-row: -2 / -3;
       grid-column: -1 / -2;
+    }
+  }
+}
+
+@supports (animation: zoom 5s infinite) and (display: grid) and (not(display: -ms-grid)) {
+  @media screen and (min-width: 512px) {
+    input {
+      display: inline-block;
+      margin-right: 0.5em;
+      position: absolute;
+      z-index: 1;
+      right: 22.75em;
+      top: 1em;
+    }
+
+    label {
+      display: inline-block;
+      color: white;
+      cursor: pointer;
+      z-index: 1;
+      position: absolute;
+      top: 0.5em;
+      right: 0.5em;
     }
   }
 }
