@@ -61,11 +61,13 @@ section {
 @each $name, $colour in $colours {
   section:nth-child(#{length($colours)}n + #{index(($colours), ($name $colour))}) {
     background-color: $colour;
+    background-color: colour($name);
     mix-blend-mode: color-dodge;
 
     a:hover {
       background-color: #444;
       color: $colour;
+      color: colour($name);
     }
   }
 }
