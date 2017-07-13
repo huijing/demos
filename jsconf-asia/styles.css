@@ -15,7 +15,12 @@ html {
   width: 100vmin;
   -webkit-border-radius: 1vmin;
           border-radius: 1vmin;
-  position: relative; }
+  position: relative;
+  -webkit-box-shadow: 3vmin 3vmin 1.5vmin #444;
+          box-shadow: 3vmin 3vmin 1.5vmin #444;
+  -webkit-transform: scale(0.85);
+      -ms-transform: scale(0.85);
+          transform: scale(0.85); }
 
 .background {
   position: absolute;
