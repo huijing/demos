@@ -186,15 +186,10 @@ svg:nth-child(2) {
   html,
   body {
     height: 100%; }
-  main {
-    height: 100%;
-    width: 100%;
-    max-height: 100%;
-    max-width: 100%; }
-  main > * {
+  .fallback-wrapper > * {
     display: none; }
-  main::before {
-    content: url("http://res.cloudinary.com/huijing/image/upload/v1499919351/jsconf-asia.jpg");
+  .fallback-wrapper::before {
+    content: url("http://res.cloudinary.com/huijing/image/upload/c_scale,h_480/jsconf-asia.jpg");
     display: block;
-    height: 100%;
-    width: 100%; } }
+    max-width: 100%;
+    text-align: center; } }
