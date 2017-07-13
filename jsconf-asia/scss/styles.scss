@@ -1,0 +1,209 @@
+$colours: (#56aaeb, #256bc4, #9ae0ff, #021c7f, #256bc3, #ffed2a);
+
+html {
+  box-sizing: border-box;
+}
+
+*,*::before, *::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.jsconf-asia {
+  background-color: black;
+  margin: 0 auto;
+  height: 100vmin;
+  width: 100vmin;
+  border-radius: 1vmin;
+  position: relative;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  @each $colour in $colours {
+    $i: index($colours, $colour);
+    div:nth-child(#{$i}) {
+      border: 1vmin solid $colour;
+      border-radius: 1vmin;
+      box-shadow: 0 0 1vmin $colour,
+        inset 0 0 1vmin $colour,
+        0 0 2vmin $colour,
+        inset 0 0 2vmin $colour,
+        0 0 3vmin $colour,
+        inset 0 0 3vmin $colour;
+    }
+  }
+  
+  div {
+    height: 100vmin;
+    float: left;
+    margin-right: 2vmin;
+  }
+  
+  div:first-child {
+    width: 10vmin;
+  }
+  
+  div:nth-child(2) {
+    width: 19vmin;
+  }
+  
+  div:nth-child(3) {
+    width: 4vmin;
+  }
+  
+  div:nth-child(4) {
+    width: 28vmin;
+  }
+  
+  div:nth-child(5) {
+    width: 10vmin;
+  }
+  
+  div:nth-child(6) {
+    width: 19vmin;
+    margin-right: 0;
+  }
+}
+
+.js {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+svg {
+  height: 46.0317vmin;
+  
+  path {
+    fill: white;
+  }
+}
+
+svg:first-child,
+svg:nth-child(2) {
+  position: absolute;
+  bottom: 7.9365vmin;
+}
+
+svg:first-child {
+  left: 26.1905vmin;
+  width: 28.5714vmin;
+}
+
+svg:nth-child(2) {
+  right: 7.9365vmin;
+  width: 32.5397vmin;
+}
+
+@supports (filter: drop-shadow(0 0 1vmin gray)) {
+  svg {
+    filter: drop-shadow(0 0 1vmin gray)
+      drop-shadow(0 0 2vmin white)
+      drop-shadow(0 0 3vmin white);
+  }
+  
+  .flicker {
+    animation: flicker 10s infinite;
+  }
+
+  .light {
+    animation: light 10s infinite;
+  }
+}
+
+@supports (display: grid) and (not(display: -ms-grid)) {
+  .background {
+    display: grid;
+    grid-template-rows: 100vmin;
+    grid-template-columns: 10vmin 19vmin 4vmin 28vmin 10vmin 19vmin;
+    grid-gap: 2vmin;
+    
+    div {
+      float: initial;
+      height: initial;
+      margin: initial;
+    }
+    
+    @for $i from 1 through 6 {
+      div:nth-child(#{$i}) {
+        width: initial;
+      }
+    }
+  }
+
+  .js {
+    display: grid;
+    grid-template-rows: calc(29000vmin / 630)
+      calc(29000vmin / 630)
+      calc(5000vmin / 630);
+    grid-template-columns: calc(16500vmin / 630)
+      calc(18000vmin / 630)
+      calc(3000vmin / 630)
+      calc(20500vmin / 630)
+      calc(5000vmin / 630);
+  }
+  
+  svg {
+    max-width: 100%;
+  }
+  
+  svg:first-child,
+  svg:nth-child(2) {
+    position: initial;
+    height: initial;
+    width: initial;
+  }
+
+  svg:first-child {
+    grid-row: 2;
+    grid-column: 2 / 3;
+  }
+
+  svg:nth-child(2) {
+    grid-row: 2;
+    grid-column: 4 / 5;
+  }
+}
+
+@keyframes flicker {
+  21%, 39%, 45%, 47% {
+    filter: none;
+  }
+  18%, 26%, 38%, 40%, 44%, 46%, 48% {
+    filter: drop-shadow(0 0 1vmin gray)
+      drop-shadow(0 0 2vmin white)
+      drop-shadow(0 0 3vmin white);
+  }
+}
+
+@keyframes light {
+  21%, 39%, 45%, 47% {
+    fill: gray;
+  }
+  18%, 26%, 38%, 40%, 44%, 46%, 48% {
+    fill: white;
+  }
+}
+
+@supports not (width:100vmin) {
+  main > * {
+    display: none;
+  }
+
+  main::before {
+    content: '';
+    display: block;
+    background: url('http://res.cloudinary.com/huijing/image/upload/v1499919351/jsconf-asia.jpg') no-repeat center;
+    background-position: contain;
+  }
+}
