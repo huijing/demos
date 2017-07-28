@@ -1,0 +1,1 @@
+"use strict";function addClass(){bodyClass.contains("vertical")?bodyClass.remove("vertical"):bodyClass.add("vertical")}var toggle=document.getElementById("jsToggle"),bodyClass=document.body.classList;toggle.addEventListener("change",addClass);

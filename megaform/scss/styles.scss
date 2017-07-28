@@ -1,0 +1,35 @@
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+section {
+  display: block;
+}
+
+label {
+  font-size: 90%;
+  font-style: italic;
+  margin-bottom: 0.5em;
+}
+
+.input {
+  input,
+  label {
+    display: block;
+  }
+
+  input {
+    margin-bottom: 1em;
+  }
+}
+
+.vertical {
+  writing-mode: vertical-rl;
+}

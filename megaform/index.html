@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mega-form</title>
+  <meta name="description" content="Test case for HTML form elements">
+  <meta name="author" content="Chen Hui Jing">
+  <link rel="stylesheet" href="styles.css">
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <form>
+    <h1>Mega-form Test Case</h1>
+    <label>
+      <input type="checkbox" id="jsToggle">
+      <span>Toggle <code>writing-mode: vertical-rl</code></span>
+    </label>
+    <section class="input">
+      <h2>The <code>input</code> element</h2>
+      <input type="button" value="Button input">
+      <label for="color">Color input</label>
+      <input id="color" type="color">
+      <label for="date">Date input</label>
+      <input id="date" type="date">
+      <label for="datetime">Datetime-local input</label>
+      <input id="datetime" type="datetime-local">
+      <label for="emailAddress">Email input</label>
+      <input id="emailAddress" type="email" placeholder="email">
+      <label for="file">File input</label>
+      <input id="file" name="myFile" type="file" placeholder="file">
+      <label for="image">Image input</label>
+      <input id="image" type="image" src="https://raw.githubusercontent.com/mdn/learning-area/master/html/forms/image-type-example/login.png">
+      <label for="month">Month input</label>
+      <input id="month" type="month">
+      <label for="number">Number input</label>
+      <input id="number" type="number">
+      <label for="userPassword">Password input</label>
+      <input id="userPassword" type="password" placeholder="password">
+      <label for="range">Range input</label>
+      <input id="range" type="range">
+      <input id="reset" type="reset" value="Reset the form">
+      <label for="search">Search input</label>
+      <input id="search" type="search" placeholder="search">
+      <input id="submit" type="submit" value="Submit the form">
+      <label for="phoneNumber">Tel input</label>
+      <input id="phoneNumber" type="tel">
+      <label for="text">Text input</label>
+      <input id="text" type="text" placeholder="text">
+      <label for="time">Time input</label>
+      <input id="time" type="time">
+      <label for="url">URL input</label>
+      <input id="url" type="url">
+      <label for="week">Week input</label>
+      <input id="week" type="week">
+    </section>
+
+    <section>
+      <h2>The <code>fieldset</code> element</h2>
+      <p>Also covers the <code>legend</code> element and the <code>radio</code> and <code>checkbox</code> input types.</p>
+      <fieldset>
+        <legend>Fieldset with legend</legend>
+        <input type="radio" id="radio1" name="radio">
+        <label for="radio1">Radio 1</label>
+        <input type="radio" id="radio2" name="radio">
+        <label for="radio2">Radio 2</label>
+        <input id="checkBox" type="checkbox">
+        <label for="checkBox">Checkbox</label>
+      </fieldset>
+    </section>
+
+    <section class="button">
+      <h2>The <code>button</code> element</h2>
+      <button name="button">Button element</button>
+    </section>
+    
+    <section class="select">
+      <h2>The <code>select</code> element</h2>
+      <p>Also covers the <code>optgroup</code> and <code>option</code> elements.</p>
+      <select>
+        <optgroup label="Group 1">
+          <option>Option 1.1</option>
+        </optgroup>
+        <optgroup label="Group 2">
+          <option>Option 2.1</option>
+          <option>Option 2.2</option>
+        </optgroup>
+        <optgroup label="Group 3" disabled>
+          <option>Option 3.1</option>
+          <option>Option 3.2</option>
+          <option>Option 3.3</option>
+        </optgroup>
+      </select>
+    </section>
+
+    <section class="datalist">
+      <h2>The <code>datalist</code> element</h2>
+      <label>Choose a browser from this datalist:
+        <input list="browsers" name="browsers" />
+      </label>
+      <datalist id="browsers">
+        <option value="Chrome">
+        <option value="Firefox">
+        <option value="Internet Explorer">
+        <option value="Opera">
+        <option value="Safari">
+        <option value="Microsoft Edge">
+      </datalist>
+    </section>
+
+    <section class="meter">
+      <h2>The <code>meter</code> element</h2>
+      <label for ="meter">Meter element</label>
+      <meter id="meter" min="200" max="500" value="350">350 degrees</meter>
+    </section>
+
+    <section class="textarea">
+      <h2>The <code>textarea</code> element</h2>
+      <textarea name="textarea" rows="10" cols="50">Write something here</textarea>
+    </section>
+
+    <section class="progress">
+      <h2>The <code>progress</code> element</h2>
+      <progress value="70" max="100">70 %</progress>
+    </section>
+
+    <section class="details">
+      <h2>The <code>details</code> element</h2>
+      <p>Also covers the <code>summary</code> element.</p>
+      <details>
+        <summary>Some details</summary>
+        <p>More info about the details.</p>
+      </details>
+      <details open>
+        <summary>Even more details</summary>
+        <p>Here are even more details about the details.</p>
+      </details>
+    </section>
+
+    <section class="dialog">
+      <h2>The <code>dialog</code> element</h2>
+      <dialog open>
+        <p>Greetings, one and all!</p>
+      </dialog>
+    </section>
+  </form>
+
+  <form class="output" oninput="result.value=parseInt(a.value)+parseInt(b.value)">
+    <h2>The <code>output</code> element</h2>
+    <input type="range" name="b" value="50" /> +
+    <input type="number" name="a" value="10" /> =
+    <output name="result">60</output>
+  </form>
+  <script src="scripts.js"></script>
+</body>
+
+</html>
