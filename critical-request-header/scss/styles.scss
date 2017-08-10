@@ -1,0 +1,253 @@
+$blue: #3583ea;
+$purple: #ba6fd7;
+$yellow: #f1c857;
+$red: #e9585b;
+$green: #299555;
+$background: #333333;
+$txt-dark: #7d7e7e;
+$txt-light: #fff;
+
+// Responsive typography
+$min-width: 320;
+$max-width: 1280;
+$min-font: 16;
+$max-font: 24;
+
+:root {
+  font-size: #{$min-font}px;
+}
+
+@media (min-width: #{$min-width}px) and (max-width: #{$max-width}px) {
+  :root {
+    font-size: calc( #{$min-font}px + (#{$max-font} - #{$min-font}) * ( (100vw - #{$min-width}px) / ( #{$max-width} - #{$min-width})));
+  }
+}
+
+@media (min-width: #{$max-width}px) {
+  :root {
+    font-size: #{$max-font}px;
+  }
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+  font-family: 'Trebuchet MS', Helvetica, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: $background;
+  overflow: hidden;
+  max-height: 60vh;
+  position: relative;
+}
+
+.title {
+  color: $txt-light;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 2.5em;
+  z-index: 1;
+  padding-right: 0.25em;
+}
+
+.time {
+  color: $txt-dark;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.5em;
+}
+
+.grid__item:nth-of-type(1) {
+  background-color: $blue;
+  width: 30vw;
+}
+
+.grid__item:nth-of-type(2) {
+  background-color: $purple;
+  width: 45vw;
+}
+
+.grid__item:nth-of-type(3) {
+  background-color: $yellow;
+  width: 60vw;
+  position: relative;
+  z-index: 2;
+}
+
+.time {
+  width: calc(100% / 9);
+  float: left;
+  padding: 1em;
+}
+
+.time:nth-child(8) {
+  position: relative;
+
+  &::before {
+    display: block;
+    content: '';
+    height: 3.5em;
+    width: 3.5em;
+    border-radius: 50%;
+    position: absolute;
+    border: 0.2em solid $blue;
+    z-index: 1;
+  }
+}
+
+.border {
+  width: 0.2em;
+  background-color: $red;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  left: calc((100% / 9) * 7);
+}
+
+@supports (display:grid) {
+  .time {
+    grid-row: 7;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows:  repeat(3, 2em) repeat(3, minmax(10vmin, 3em)) 2em 2em 50vh;
+    grid-gap: 0.125em;
+    position: relative;
+  }
+
+  @media screen and (min-width: 480px) {
+    .grid {
+      transform: rotate(-30deg) translateX(5vh);
+    }
+  }
+
+  @media screen and (min-width: 640px) {
+    .grid {
+      transform: rotate(-30deg) translateY(-15vh);
+    }
+  }
+
+  .grid__item:nth-of-type(1) {
+    grid-row: 4;
+    grid-column: span 3;
+    width: auto;
+  }
+
+  .grid__item:nth-of-type(2) {
+    grid-row: 5;
+    grid-column: span 5;
+    width: auto;
+  }
+
+  .grid__item:nth-of-type(3) {
+    grid-row: 6;
+    grid-column: span 7;
+    width: auto;
+  }
+
+  .border {
+    grid-row: 1 / -1;
+    grid-column: 8;
+    margin-left: -0.125em;
+    width: 1px;
+    border-left: 0.2em solid $red;
+    left: initial;
+  }
+
+  .square1 {
+    grid-column: 2;
+    position: relative;
+    
+    &::before {
+      display: block;
+      content: '';
+      height: 1.25em;
+      width: 1.25em;
+      border: 0.2em solid $purple;
+      position: absolute;
+      right: 0;
+    }
+  }
+
+  .square2 {
+    grid-column: 3;
+    grid-row: 2;
+    position: relative;
+
+    &::before {
+      display: block;
+      content: '';
+      height: 0.5em;
+      width: 0.5em;
+      background-color: $green;
+      position: absolute;
+      right: 1em;
+      top: 1em;
+    }
+  }
+
+  .circle {
+    grid-column: 2;
+    grid-row: 3;
+    position: relative;
+    
+    &::before {
+      display: block;
+      content: '';
+      border: 0.2em solid $yellow;
+      border-radius: 50%;
+      position: absolute;
+      height: 4em;
+      width: 4em;
+      top: calc(50% -  0.5em);
+      left: calc(50% - 2em);
+    }
+  }
+
+  .square3 {
+    grid-column: 8;
+    grid-row: 6;
+    position: relative;
+
+    &::before {
+      display: block;
+      content: '';
+      height: 0.75em;
+      width: 0.75em;
+      background-color: $yellow;
+      position: absolute;
+      right: 0;
+      top: 1em;
+    }
+  }
+
+  .square4 {
+    grid-column: 6;
+    grid-row: 8;
+    position: relative;
+
+    &::before {
+      display: block;
+      content: '';
+      height: 1.5em;
+      width: 1.5em;
+      position: absolute;
+      right: 0;
+      top: 100%;
+      border: 0.2em solid $green;
+    }
+  }
+}
