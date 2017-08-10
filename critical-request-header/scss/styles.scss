@@ -50,6 +50,18 @@ header {
   position: relative;
 }
 
+@media screen and (max-width: 480px) {
+  header {
+    min-height: 20em;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  header {
+    min-height: 16em;
+  }
+}
+
 .title {
   color: $txt-light;
   display: flex;
