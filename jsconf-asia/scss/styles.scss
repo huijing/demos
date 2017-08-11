@@ -208,7 +208,7 @@ svg:nth-child(2) {
   }
 
   .fallback-wrapper::before {
-    content: url('http://res.cloudinary.com/huijing/image/upload/c_scale,h_480/jsconf-asia.jpg');
+    content: url('img/jsconf-asia_480.jpg');
     display: block;
     max-width: 100%;
     text-align: center;
