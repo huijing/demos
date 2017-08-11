@@ -178,7 +178,7 @@ img {
 }
 
 .example-wrapper::after {
-  content: url('http://res.cloudinary.com/huijing/image/upload/c_scale,w_500/Bauhaus_8.jpg');
+  content: url('img/bauhaus_8_500.jpg');
   display: block;
   text-align: center;
   max-width: 100%;
