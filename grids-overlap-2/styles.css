@@ -89,6 +89,9 @@ html {
   text-align: center; }
   .card__content h2 {
     margin: auto;
+    -webkit-transform: rotate(-15deg);
+        -ms-transform: rotate(-15deg);
+            transform: rotate(-15deg);
     color: #000;
     font-size: 150%; }
 
