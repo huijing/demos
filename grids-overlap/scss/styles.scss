@@ -1,0 +1,59 @@
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(9, calc(100vmin / 9));
+  grid-template-rows: repeat(6, calc(100vmin / 9));
+}
+
+main::before {
+  display: block;
+  content: '';
+  grid-row: 1 / 7;
+  grid-column: 1 / 7;
+  background: red;
+  border-radius: 50%;
+  mix-blend-mode: screen;
+}
+
+main::after {
+  display: block;
+  content: '';
+  grid-row: 1 / 7;
+  grid-column: 4 / 10;
+  background: green;
+  border-radius: 50%;
+}
+
+h2 {
+  grid-row: 3 / 5;
+  grid-column: 1 / 10;
+  text-align: center;
+  align-self: center;
+  font-size: 11vmin;
+  order: 1;
+  color: white;
+}
+
+@media screen and (min-aspect-ratio: 3/2) {
+  main {
+    grid-template-columns: repeat(9, calc(100vmin / 6));
+    grid-template-rows: repeat(6, calc(100vmin / 6));
+  }
+
+  h2 {
+    font-size: 16vmin;
+  }
+}

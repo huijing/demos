@@ -1,0 +1,193 @@
+@font-face {
+  font-family: 'League Gothic';
+  src: url('fonts/leaguegothic-regular.eot');
+  src: url('fonts/leaguegothic-regular.eot?#iefix') format('embedded-opentype'),
+    url('fonts/leaguegothic-regular.woff2') format('woff2'),
+    url('fonts/leaguegothic-regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'League Gothic';
+  src: url('fonts/leaguegothic-italic.eot');
+  src: url('fonts/leaguegothic-italic.eot?#iefix') format('embedded-opentype'),
+    url('fonts/leaguegothic-italic.woff2') format('woff2'),
+    url('fonts/leaguegothic-italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+  font-family: 'League Gothic', sans-serif;
+  font-size: 150%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.title {
+  color: red;
+  font-size: 250%;
+  line-height: 1;
+}
+
+.card:nth-of-type(1) {
+  background-image: url('img/red1.png');
+  background-size: cover;
+  background-position: bottom;
+}
+
+.card:nth-of-type(2) {
+  background-image: url('img/red2.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.card:nth-of-type(3) {
+  background-image: url('img/red4.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.card:nth-of-type(4) {
+  background-image: url('img/red3.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.card:nth-of-type(5) {
+  background-image: url('img/red5.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.card:nth-of-type(6) {
+  background-image: url('img/red8.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.card:nth-of-type(7) {
+  background-image: url('img/red6.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.card:nth-of-type(8) {
+  background-image: url('img/red7.jpg');
+  background-size: cover;
+  background-position: top;
+}
+
+.card__content {
+  display: flex;
+  height: 100%;
+  text-align: center;
+
+  h2 {
+    margin: auto;
+    // transform: rotate(-15deg);
+    color: #000;
+    font-size: 150%;
+  }
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.title {
+  width: 100%;
+}
+
+.card {
+  flex: auto;
+  min-width: 12em;
+  height: 12em;
+}
+
+@supports (display:grid) {
+  main {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(8em, 1fr));
+    grid-auto-rows: 8em;
+  }
+
+  .title {
+    width: initial;
+  }
+
+  .card {
+    min-width: initial;
+    height: initial;
+  }
+
+  @media screen and (max-width: 383px) {
+    main {
+      grid-template-rows: 3em repeat(auto-fill, 8em);
+    }
+  }
+
+  @media screen and (min-aspect-ratio: 1/1) {
+    main {
+      grid-template-columns: repeat(4, minmax(25vw, 5em));
+      grid-template-rows: repeat(3, calc(100vh / 3));
+      grid-template-areas: "a b c ."
+                           "d e . f"
+                           "g . h i";
+    }
+
+    .title {
+      writing-mode: vertical-rl;
+      justify-self: start;
+    }
+
+    .card:nth-of-type(1) {
+      transform: translate(-20%, 0%)
+    }
+
+    .card:nth-of-type(2) {
+      transform: translate(-10%, 40%);
+      order: 1;
+    }
+
+    .card:nth-of-type(3) {
+      grid-area: d;
+      transform: translate(10%, -10%);
+    }
+
+    .card:nth-of-type(4) {
+      grid-area: e;
+      transform: translate(10%, 30%);
+    }
+
+    .card:nth-of-type(5) {
+      grid-area: f;
+      transform: translate(-15%, -40%);
+    }
+
+    .card:nth-of-type(6) {
+      grid-area: g;
+    }
+
+    .card:nth-of-type(7) {
+      grid-area: h;
+      transform: translate(10%, -10%);
+    }
+
+    .card:nth-of-type(8) {
+      grid-area: i;
+      transform: translate(0%, -25%);
+    }
+  }
+}
