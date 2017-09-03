@@ -100,7 +100,7 @@ html {
   }
 }
 
-@supports (transform: rotate(-15deg)) {
+@supports (transform: perspective(1px) rotate(-15deg)) {
   .card__content h2 {
     transform: rotate(-15deg);
   }
