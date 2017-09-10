@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Basic grid with fallbacks</title>
+  <meta name="description" content="Demonstration of a basic grid with fallbacks using feature queries">
+  <meta name="author" content="Chen Hui Jing">
+  <link rel="stylesheet" href="styles.css">
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body class="plain">
+<!--   <header>
+    <h1>Basic grid</h1>
+    <div class="controls">
+      <input type="range" min="0" max="2" class="" id="jsSwitcher" />
+      <label for="jsSwitcher" class="js-status">Plain</label>
+      <input type="checkbox" id="jsImgStyle" />
+      <label for="jsImgStyle" class="js-imgstyle">Irregular images</label>
+    </div>
+  </header> -->
+  <main class="grid">
+    <div class="grid__item">
+      <img class="card__img" src="images/image1.jpg">
+      <h2>Card title</h2>
+      <p>Because the card pattern is soooo popular right now...</p>
+    </div>
+    <div class="grid__item">
+      <img class="card__img" src="images/image2.jpg">
+      <h2>Card title</h2>
+      <p>Because the card pattern is soooo popular right now, but not all text are made the same</p>
+    </div>
+    <div class="grid__item">
+      <img class="card__img" src="images/image3.jpg">
+      <h2>Card title</h2>
+      <p>Because the card pattern is soooo popular right now...</p>
+    </div>
+    <div class="grid__item">
+      <img class="card__img" src="images/image4.jpg">
+      <h2>A different card title</h2>
+      <p>Because the card pattern is soooo popular right now...</p>
+    </div>
+    <div class="grid__item">
+      <img class="card__img" src="images/image5.jpg">
+      <h2>Some ridiculously long card title that makes the developer flip a table</h2>
+      <p>Because the card pattern is soooo popular right now, but not all text are made the same</p>
+    </div>
+    <div class="grid__item">
+      <img class="card__img" src="images/image6.jpg">
+      <h2>Card title</h2>
+      <p>Because the card pattern is soooo popular right now...</p>
+    </div>
+    <div class="grid__item">
+      <img class="card__img" src="images/image7.jpg">
+      <h2>A different card title</h2>
+      <p>Because the card pattern is soooo popular right now, but not all text are made the same. Welcome to the real world, my friend.</p>
+    </div>
+    <div class="grid__item">
+      <img class="card__img" src="images/image8.jpg">
+      <h2>Card title</h2>
+      <p>Because the card pattern is soooo popular right now...</p>
+    </div>
+    <div class="grid__item">
+      <img class="card__img" src="images/image9.jpg">
+      <h2>Card title</h2>
+      <p>Because the card pattern is soooo popular right now...</p>
+    </div>
+    <div class="grid__item">
+      <img class="card__img" src="images/image10.jpg">
+      <h2>A different card title</h2>
+      <p>Because the card pattern is soooo popular right now, but not all text are made the same. Welcome to the real world, my friend.</p>
+    </div>
+    <div class="grid__item">
+      <img class="card__img" src="images/image11.jpg">
+      <h2>Some ridiculously long card title that makes the developer flip a table</h2>
+      <p>Because the card pattern is soooo popular right now...</p>
+    </div>
+    <div class="grid__item">
+      <img class="card__img" src="images/image12.jpg">
+      <h2>Card title</h2>
+      <p>Because the card pattern is soooo popular right now...</p>
+    </div>
+    <div class="grid__item">
+      <img class="card__img" src="images/image13.jpg">
+      <h2>Card title</h2>
+      <p>Because the card pattern is soooo popular right now, but not all text are made the same. Welcome to the real world, my friend.</p>
+    </div>
+    <div class="grid__item">
+      <img class="card__img" src="images/image14.jpg">
+      <h2>Card title</h2>
+      <p>Because the card pattern is soooo popular right now...</p>
+    </div>
+    <div class="grid__item">
+      <img class="card__img" src="images/image15.jpg">
+      <h2>Card title</h2>
+      <p>Because the card pattern is soooo popular right now, but not all text are made the same</p>
+    </div>
+    <div class="grid__item">
+      <img class="card__img" src="images/image16.jpg">
+      <h2>Some ridiculously long card title that makes the developer flip a table</h2>
+      <p>Because the card pattern is soooo popular right now...</p>
+    </div>
+    <div class="grid__item">
+      <img class="card__img" src="images/image17.jpg">
+      <h2>Card title</h2>
+      <p>Because the card pattern is soooo popular right now, but not all text are made the same. Welcome to the real world, my friend.</p>
+    </div>
+    <div class="grid__item">
+      <img class="card__img" src="images/image18.jpg">
+      <h2>A different card title</h2>
+      <p>Because the card pattern is soooo popular right now...</p>
+    </div>
+    <div class="grid__item">
+      <img class="card__img" src="images/image19.jpg">
+      <h2>Card title</h2>
+      <p>Because the card pattern is soooo popular right now...</p>
+    </div>
+    <div class="grid__item">
+      <img class="card__img" src="images/image20.jpg">
+      <h2>Card title</h2>
+      <p>Because the card pattern is soooo popular right now...</p>
+    </div>
+    <div class="grid__item">
+      <img class="card__img" src="images/image21.jpg">
+      <h2>Card title</h2>
+      <p>Because the card pattern is soooo popular right now, but not all text are made the same</p>
+    </div>
+    <div class="grid__item">
+      <img class="card__img" src="images/image22.jpg">
+      <h2>Card title</h2>
+      <p>Because the card pattern is soooo popular right now...</p>
+    </div>
+    <div class="grid__item">
+      <img class="card__img" src="images/image23.jpg">
+      <h2>Card title</h2>
+      <p>Because the card pattern is soooo popular right now, but not all text are made the same. Welcome to the real world, my friend.</p>
+    </div>
+    <div class="grid__item">
+      <img class="card__img" src="images/image24.jpg">
+      <h2>Some ridiculously long card title that makes the developer flip a table</h2>
+      <p>Because the card pattern is soooo popular right now...</p>
+    </div>
+    <div class="grid__item">
+      <img class="card__img" src="images/image25.jpg">
+      <h2>A different card title</h2>
+      <p>Because the card pattern is soooo popular right now...</p>
+    </div>
+  </main>
+  <!-- <script src="scripts.js"></script> -->
+</body>
+
+</html>
