@@ -1,0 +1,273 @@
+@font-face {
+  font-family: 'Rubik';
+  src: url('fonts/rubik-medium.eot');
+  src: url('fonts/rubik-medium.eot?#iefix') format('embedded-opentype'),
+    url('fonts/rubik-medium.woff2') format('woff2'),
+    url('fonts/rubik-medium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// General styles
+html {
+  box-sizing: border-box;
+  height: 100%;
+  font-family: 'Rubik', sans-serif;
+  background-color: #f8f6f1;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+img {
+  justify-self: center;
+  width: 100%;
+}
+
+main {
+  svg {
+    margin-top: 1em;
+  }
+}
+
+// Layout styles for Braun HiFi studio Anlagen
+.anlagen {
+  position: absolute;
+  top: 0;
+  grid-gap: 0.5em;
+  grid-template-columns: calc((100vw - 3em) / 3) calc((100vw - 3em) / 3) calc((100vw - 3em) / 3);
+  grid-template-areas: "title title title"
+                       "text text text"
+                       "key key key"
+                       "detail1 detail2 detail3";
+
+  h1 {
+    grid-area: title;
+  }
+
+  div {
+    grid-area: text;
+  }
+
+  img:first-of-type {
+    grid-area: key;
+  }
+
+  img:nth-of-type(2) {
+    grid-area: detail1;
+  }
+
+  img:nth-of-type(3) {
+    grid-area: detail2;
+  }
+
+  img:nth-of-type(4) {
+    grid-area: detail3;
+  }
+}
+
+@media screen and (min-aspect-ratio: 1/1) and (min-height: 39em) {
+  .anlagen {
+    grid-template-columns: 18.75em 1fr 1fr 1fr;
+    grid-template-rows: calc((100vh - 3em) / 3) calc((100vh - 3em) / 3) calc((100vh - 3em) / 3);
+    grid-template-areas: "title key key key"
+                         "text key key key"
+                         "text detail1 detail2 detail3";
+
+    h1 span {
+      display: block;
+    }
+    
+    img:first-of-type {
+      height: calc(((100vh - 2em) / 3) * 2);
+      object-fit: cover;
+    }
+    
+    img:nth-of-type(2),
+    img:nth-of-type(3),
+    img:nth-of-type(4) {
+      height: calc((100vh - 3em) / 3);
+      object-fit: cover;
+    }
+    
+    svg {
+      grid-area: text;
+      align-self: end;
+    }
+  }
+}
+
+@media screen and (min-aspect-ratio: 8/5) and (min-height: 39em) {
+  .anlagen {
+    grid-template-columns: 18.75em 4fr 1fr 1fr;
+    grid-template-rows: calc((100vh - 3em) / 3) calc((100vh - 3em) / 3) calc((100vh - 3em) / 3);
+    grid-template-areas: "title key . ."
+                         "text key detail1 detail2"
+                         "text . detail3 .";
+
+    div {
+      margin-top: -2em;
+    }
+  }
+}
+
+// Layout styles for Braun HiFi Steuergerät audio 300
+.steuergerät {
+  position: absolute;
+  top: 0;
+  grid-gap: 0.5em;
+  grid-template-columns: 50% 50%;
+  grid-template-areas: "title title"
+                       "text text"
+                       "key key"
+                       "detail1 detail2"
+                       "detail3 detail4";
+
+  h1 {
+    grid-area: title;
+  }
+
+  div {
+    grid-area: text;
+  }
+
+  img:first-of-type {
+    grid-area: detail1;
+  }
+
+  img:nth-of-type(2) {
+    grid-area: key;
+  }
+
+  img:nth-of-type(3) {
+    grid-area: detail2;
+  }
+
+  img:nth-of-type(4) {
+    grid-area: detail3;
+  }
+
+  img:nth-of-type(5) {
+    grid-area: detail4;
+  }
+}
+
+@media screen and (min-aspect-ratio: 1/1) and (min-height: 22em) {
+  .steuergerät {
+    grid-template-columns: 18.75em 1fr 1fr 1fr;
+    grid-template-rows: calc((100vh - 3em) / 3) calc((100vh - 3em) / 3) calc((100vh - 3em) / 3);
+    grid-template-areas: "title detail1 key key"
+                         "text detail2 key key"
+                         "text detail3 detail4 braun";
+
+    h1 span {
+      display: block;
+    }
+    
+    img:nth-of-type(2) {
+      height: calc(((100vh - 2em) / 3) * 2);
+      object-fit: cover;
+    }
+    
+    img:first-of-type,
+    img:nth-of-type(3),
+    img:nth-of-type(4),
+    img:nth-of-type(5) {
+      height: calc((100vh - 3em) / 3);
+      object-fit: cover;
+    }
+    
+    svg {
+      grid-area: braun;
+      align-self: end;
+      justify-self: end;
+    }
+  }
+}
+
+@media screen and (min-aspect-ratio: 8/5) and (min-height: 36em) {
+  .steuergerät {
+    grid-template-columns: 17.5em 1fr 3fr 1fr 1fr;
+    grid-template-rows: calc((100vh - 3em) / 3) calc((100vh - 3em) / 3) calc((100vh - 3em) / 3);
+    grid-template-areas: "title . key . ."
+                         "text detail1 key detail2 detail3"
+                         "text . . detail4 .";
+
+    div {
+      margin-top: -2em;
+    }
+    
+    svg {
+      grid-area: text;
+      align-self: end;
+      justify-self: start;
+    }
+  }
+}
+
+// Pager styles
+.pager {
+  position: absolute;
+  z-index: 4;
+  top: 0;
+  right: 0;
+  width: 2em;
+
+  a {
+    opacity: 0.2;
+    transition: opacity 0.5s;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.braun {
+  display: grid;
+  padding: 1em;
+  background-color: #f8f6f1;
+  z-index: 3;
+  animation: fade 1s 1;
+}
+
+.braun:not(:target) {
+  z-index: 1;
+  animation: hidden 1s 1;
+}
+
+.steuergerät:not(:target) {
+  display: none;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes hidden {
+  0% {
+    z-index: 2;
+  }
+  100% {
+    z-index: 2;
+  }
+}
