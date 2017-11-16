@@ -63,7 +63,7 @@ img {
 
 .fluid ul {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 3fr 2fr);
   grid-gap: 1em;
   padding: 1em; }
 
