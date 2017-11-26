@@ -9,8 +9,7 @@
   --green: #7ED321;
   --red: #ff595e;
   --yellow: #F8E81C;
-  --blue: #4990E2;
-  --purple: #DB61F4; }
+  --blue: #4990E2; }
 
 html {
   -webkit-box-sizing: border-box;
@@ -49,50 +48,41 @@ section {
       -ms-flex: auto;
           flex: auto; }
 
-section:nth-child(5n + 1) {
+section:nth-child(4n + 1) {
   background-color: #7ED321;
   background-color: var(--green, #7ED321);
   mix-blend-mode: color-dodge; }
-  section:nth-child(5n + 1) a:hover {
+  section:nth-child(4n + 1) a:hover {
     background-color: #444;
     color: #7ED321;
     color: var(--green, #7ED321); }
 
-section:nth-child(5n + 2) {
+section:nth-child(4n + 2) {
   background-color: #ff595e;
   background-color: var(--red, #ff595e);
   mix-blend-mode: color-dodge; }
-  section:nth-child(5n + 2) a:hover {
+  section:nth-child(4n + 2) a:hover {
     background-color: #444;
     color: #ff595e;
     color: var(--red, #ff595e); }
 
-section:nth-child(5n + 3) {
+section:nth-child(4n + 3) {
   background-color: #F8E81C;
   background-color: var(--yellow, #F8E81C);
   mix-blend-mode: color-dodge; }
-  section:nth-child(5n + 3) a:hover {
+  section:nth-child(4n + 3) a:hover {
     background-color: #444;
     color: #F8E81C;
     color: var(--yellow, #F8E81C); }
 
-section:nth-child(5n + 4) {
+section:nth-child(4n + 4) {
   background-color: #4990E2;
   background-color: var(--blue, #4990E2);
   mix-blend-mode: color-dodge; }
-  section:nth-child(5n + 4) a:hover {
+  section:nth-child(4n + 4) a:hover {
     background-color: #444;
     color: #4990E2;
     color: var(--blue, #4990E2); }
-
-section:nth-child(5n + 5) {
-  background-color: #DB61F4;
-  background-color: var(--purple, #DB61F4);
-  mix-blend-mode: color-dodge; }
-  section:nth-child(5n + 5) a:hover {
-    background-color: #444;
-    color: #DB61F4;
-    color: var(--purple, #DB61F4); }
 
 section:first-child {
   background-color: darkgrey;
@@ -217,7 +207,7 @@ label {
       margin-right: 0.5em;
       position: absolute;
       z-index: 1;
-      right: 22.75em;
+      right: 25em;
       top: 1em; }
     label {
       display: inline-block;

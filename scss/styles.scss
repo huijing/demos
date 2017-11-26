@@ -12,7 +12,6 @@ $colours: (
   red: #ff595e,
   yellow: #F8E81C,
   blue: #4990E2,
-  purple: #DB61F4,
 );
 
 @function colour($colour-name) {
@@ -195,7 +194,7 @@ label {
       margin-right: 0.5em;
       position: absolute;
       z-index: 1;
-      right: 22.75em;
+      right: 25em;
       top: 1em;
     }
 
