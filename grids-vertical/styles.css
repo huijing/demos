@@ -1,0 +1,115 @@
+@charset "UTF-8";
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl; }
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit; }
+
+body {
+  font-family: "Microsoft JhengHei", "微軟正黑體", "Heiti TC", "黑體-繁", sans-serif;
+  text-align: justify;
+  margin: 0;
+  padding: 0; }
+
+main {
+  margin-top: 2.5em; }
+
+img {
+  max-height: 100%;
+  max-width: 100%; }
+
+p {
+  line-height: 2; }
+
+figure {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: -webkit-min-content -webkit-max-content;
+  grid-template-rows: min-content max-content;
+  justify-items: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+figcaption {
+  font-family: "MingLiU", "微軟新細明體", "Apple LiSung", serif;
+  line-height: 1.5;
+  grid-column: span 2; }
+
+.img-single img {
+  grid-column: span 2; }
+
+.c-switcher__checkbox,
+.c-switcher__label {
+  position: fixed; }
+
+.c-switcher__checkbox {
+  top: 0.5em;
+  left: 0.5em; }
+
+.c-switcher__label {
+  top: 0.25em;
+  left: 2em;
+  -webkit-writing-mode: horizontal-tb;
+      -ms-writing-mode: lr-tb;
+          writing-mode: horizontal-tb; }
+
+.c-switcher__checkbox:checked ~ main {
+  max-height: 35em;
+  margin-top: auto;
+  margin-bottom: auto; }
+  .c-switcher__checkbox:checked ~ main figure {
+    margin-left: 1em;
+    max-height: 30em;
+    margin-top: auto;
+    margin-bottom: auto; }
+  .c-switcher__checkbox:checked ~ main .img-single img {
+    max-height: 20em; }
+
+.c-switcher__checkbox:not(:checked) ~ main {
+  -webkit-writing-mode: horizontal-tb;
+      -ms-writing-mode: lr-tb;
+          writing-mode: horizontal-tb; }
+  .c-switcher__checkbox:not(:checked) ~ main figure {
+    margin-bottom: 1em;
+    max-width: 30em;
+    margin-left: auto;
+    margin-right: auto; }
+  .c-switcher__checkbox:not(:checked) ~ main figcaption {
+    grid-column: span 2; }
+  .c-switcher__checkbox:not(:checked) ~ main .img-single img {
+    max-width: 20em; }
+  .c-switcher__checkbox:not(:checked) ~ main .img-rotate {
+    -webkit-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+            transform: rotate(-90deg); }
+
+@media screen and (min-width: 40em) {
+  .c-switcher__checkbox:not(:checked) ~ main {
+    max-width: 40em;
+    position: absolute;
+    top: 0;
+    right: 50%;
+    -webkit-transform: translateX(50%);
+        -ms-transform: translateX(50%);
+            transform: translateX(50%); } }
+
+figure {
+  border: 2px dashed green; }
+
+img {
+  border: 2px dashed blue; }
+
+figcaption {
+  border: 2px dashed red; }
