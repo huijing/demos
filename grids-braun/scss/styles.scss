@@ -31,6 +31,7 @@ h1 {
 
 p {
   margin-bottom: 1em;
+  font-size: 95%;
 }
 
 img {
@@ -80,7 +81,7 @@ main {
   }
 }
 
-@media screen and (min-aspect-ratio: 1/1) and (min-height: 39em) {
+@media screen and (min-aspect-ratio: 1/1) and (min-height: 38em) {
   .anlagen {
     grid-template-columns: 18.75em 1fr 1fr 1fr;
     grid-template-rows: calc((100vh - 3em) / 3) calc((100vh - 3em) / 3) calc((100vh - 3em) / 3);

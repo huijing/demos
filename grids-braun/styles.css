@@ -26,7 +26,8 @@ h1 {
   margin-bottom: 1em; }
 
 p {
-  margin-bottom: 1em; }
+  margin-bottom: 1em;
+  font-size: 95%; }
 
 img {
   justify-self: center;
@@ -55,7 +56,7 @@ main svg {
   .anlagen img:nth-of-type(4) {
     grid-area: detail3; }
 
-@media screen and (min-aspect-ratio: 1 / 1) and (min-height: 39em) {
+@media screen and (min-aspect-ratio: 1 / 1) and (min-height: 38em) {
   .anlagen {
     grid-template-columns: 18.75em 1fr 1fr 1fr;
     grid-template-rows: -webkit-calc((100vh - 3em) / 3) -webkit-calc((100vh - 3em) / 3) -webkit-calc((100vh - 3em) / 3);
