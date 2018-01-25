@@ -1,0 +1,69 @@
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 100%; }
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+  margin: 0;
+  padding: 0; }
+
+div {
+  padding: 1em; }
+
+body {
+  height: 100%;
+  display: grid;
+  grid-template-columns: minmax(20em, 45vw) 1fr;
+  grid-template-rows: -webkit-min-content -webkit-min-content 1fr -webkit-min-content;
+  grid-template-rows: min-content min-content 1fr min-content;
+  grid-template-areas: 'title stats' 'score stats' 'board board' 'controls controls'; }
+
+@media screen and (min-aspect-ratio: 1 / 1) {
+  body {
+    grid-template-columns: minmax(20em, 25vw) 1fr;
+    grid-template-rows: -webkit-min-content 1fr -webkit-min-content;
+    grid-template-rows: min-content 1fr min-content;
+    grid-template-areas: 'title board' 'stats board' 'score controls'; } }
+
+.title {
+  background: peachpuff;
+  grid-area: title; }
+
+.score {
+  background: ivory;
+  grid-area: score; }
+
+.stats {
+  background: lightcyan;
+  grid-area: stats; }
+
+.board {
+  background: palegreen;
+  grid-area: board;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-align-content: center;
+      -ms-flex-line-pack: center;
+          align-content: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+.board_title {
+  width: 100%;
+  text-align: center; }
+
+.controls {
+  background: thistle;
+  grid-area: controls;
+  text-align: center; }
