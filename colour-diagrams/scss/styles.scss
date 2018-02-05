@@ -97,7 +97,7 @@ em {
   margin: 0 auto;
 }
 
-@supports (display: grid) and (not(display: -ms-grid)) {
+@supports (display: grid) {
   .example-wrapper::before,
   .example-wrapper::after {
     content: none;
