@@ -25,22 +25,24 @@ html {
   padding: 0; }
 
 header::before {
-  content: 'This example requires a browser that supports CSS Flexbox or Grid. If your browser did support CSS Grid, you would have seen something that resembled the image below, except recreated in HTML and CSS instead.';
+  content: 'This example requires a browser that supports CSS Flexbox or Grid. If your browser did support CSS Grid, you would have seen something that resembles the image below, except recreated in HTML and CSS instead.';
   display: inline-block;
-  line-height: 1.2;
-  background-color: pink;
+  background-color: rgba(253, 182, 182, 0.75);
+  font-size: initial;
+  max-width: 36em;
+  color: #000;
   padding: 0.5em; }
-
-header::after {
-  content: url("./fallback.png");
-  display: block;
-  text-align: center; }
 
 header > * {
   display: none; }
 
 header {
   background-color: #333333;
+  background-image: url("./fallback.png");
+  -webkit-background-size: contain;
+          background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
   overflow: hidden;
   max-height: 60vh;
   position: relative; }
@@ -54,9 +56,12 @@ header {
     min-height: 16em; } }
 
 @supports ((display: -webkit-box) or (display: flex)) {
-  header::before,
-  header::after {
+  header::before {
     content: none; }
+  header {
+    background-image: none; }
+  .grid {
+    display: block; }
   .title {
     color: #fff;
     display: -webkit-box;
