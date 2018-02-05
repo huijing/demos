@@ -43,6 +43,24 @@ html {
   padding: 0;
 }
 
+header::before {
+  content: 'This example requires a browser that supports CSS Flexbox or Grid. If your browser did support CSS Grid, you would have seen something that resembled the image below, except recreated in HTML and CSS instead.';
+  display: inline-block;
+  line-height: 1.2;
+  background-color: pink;
+  padding: 0.5em;
+}
+
+header::after {
+  content: url('./fallback.png');
+  display: block;
+  text-align: center;
+}
+
+header > * {
+  display: none;
+}
+
 header {
   background-color: $background;
   overflow: hidden;
@@ -62,69 +80,76 @@ header {
   }
 }
 
-.title {
-  color: $txt-light;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  font-size: 2.5em;
-  z-index: 1;
-  padding-right: 0.25em;
-}
-
-.time {
-  color: $txt-dark;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 0.5em;
-}
-
-.grid__item:nth-of-type(1) {
-  background-color: $blue;
-  width: 30vw;
-}
-
-.grid__item:nth-of-type(2) {
-  background-color: $purple;
-  width: 45vw;
-}
-
-.grid__item:nth-of-type(3) {
-  background-color: $yellow;
-  width: 60vw;
-  position: relative;
-  z-index: 2;
-}
-
-.time {
-  width: calc(100% / 9);
-  float: left;
-  padding: 1em;
-}
-
-.time:nth-child(8) {
-  position: relative;
-
-  &::before {
-    display: block;
-    content: '';
-    height: 3.5em;
-    width: 3.5em;
-    border-radius: 50%;
-    position: absolute;
-    border: 0.2em solid $blue;
-    z-index: 1;
+@supports (display: flex) {
+  header::before,
+  header::after {
+    content: none;
   }
-}
 
-.border {
-  width: 0.2em;
-  background-color: $red;
-  position: absolute;
-  top: 0;
-  height: 100%;
-  left: calc((100% / 9) * 7);
+  .title {
+    color: $txt-light;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 2.5em;
+    z-index: 1;
+    padding-right: 0.25em;
+  }
+
+  .time {
+    color: $txt-dark;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0.5em;
+  }
+
+  .grid__item:nth-of-type(1) {
+    background-color: $blue;
+    width: 30vw;
+  }
+
+  .grid__item:nth-of-type(2) {
+    background-color: $purple;
+    width: 45vw;
+  }
+
+  .grid__item:nth-of-type(3) {
+    background-color: $yellow;
+    width: 60vw;
+    position: relative;
+    z-index: 2;
+  }
+
+  .time {
+    width: calc(100% / 9);
+    float: left;
+    padding: 1em;
+  }
+
+  .time:nth-child(8) {
+    position: relative;
+
+    &::before {
+      display: block;
+      content: '';
+      height: 3.5em;
+      width: 3.5em;
+      border-radius: 50%;
+      position: absolute;
+      border: 0.2em solid $blue;
+      z-index: 1;
+    }
+  }
+
+  .border {
+    width: 0.2em;
+    background-color: $red;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    left: calc((100% / 9) * 7);
+  }
 }
 
 @supports (display:grid) {
@@ -135,7 +160,7 @@ header {
   .grid {
     display: grid;
     grid-template-columns: repeat(9, 1fr);
-    grid-template-rows:  repeat(3, 2em) repeat(3, minmax(10vmin, 3em)) 2em 2em 50vh;
+    grid-template-rows:  repeat(3, 2em) repeat(3, minmax(10vmin, 3em)) 2em 2em 10vh;
     grid-gap: 0.125em;
     position: relative;
   }
@@ -143,6 +168,7 @@ header {
   @media screen and (min-width: 480px) {
     .grid {
       transform: rotate(-30deg) translateX(5vh);
+      grid-template-rows:  repeat(3, 2em) repeat(3, minmax(10vmin, 3em)) 2em 2em 50vh;
     }
   }
 
