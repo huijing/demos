@@ -1,0 +1,30 @@
+{% extends "base.njk" %}
+
+{% block content %}
+<h1>World Cup 2018</h1>
+
+<div id="currentMatches"></div>
+
+<h2>Group Tables</h2>
+<div class="group-tables">
+  {% for i in range(0, 8) -%}
+  <div id="group{{ i }}">
+    <h3 class="jsGroupHeader">Group #</h3>
+    <table id="table{{ i }}" class="group-table">
+      <thead>
+        <tr>
+          <th>Country</th>
+          <th>Games played</th>
+          <th>Wins</th>
+          <th>Losses</th>
+          <th>Points</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
+  {%- endfor %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,13 @@
+.group-table {
+  width: 100%;
+
+  td:not(:first-child) {
+    width: 17.5%;
+  }
+}
+
+.group-tables {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
+  grid-gap: 1em;
+}

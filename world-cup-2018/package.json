@@ -1,0 +1,28 @@
+{
+  "name": "jpt-tourmaline",
+  "version": "1.0.0",
+  "description": "Barebones starter-kit for static websites",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jewel Paymentech <dev@jewelpaymentech.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.6.1",
+    "browser-sync": "^2.24.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-babel": "^7.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-nunjucks-render": "^2.2.2",
+    "gulp-sass": "^4.0.1",
+    "gulp-uglify": "^3.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:jptd/JPT-Tourmaline.git"
+  }
+}
