@@ -1,12 +1,12 @@
 {
-  "name": "jpt-tourmaline",
+  "name": "world-cup-2018",
   "version": "1.0.0",
-  "description": "Barebones starter-kit for static websites",
+  "description": "Simple site for displaying information about World Cup 2018",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Jewel Paymentech <dev@jewelpaymentech.com>",
+  "author": "Chen Hui Jing <kakyou_tensai@yahoo.com>",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.26.3",
@@ -23,6 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:jptd/JPT-Tourmaline.git"
-  }
+    "url": "git@github.com:huijing/demos/world-cup-2018.git"
+  },
+  "dependencies": {}
 }
