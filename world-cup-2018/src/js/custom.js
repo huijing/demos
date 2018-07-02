@@ -85,28 +85,53 @@ fetch('https://worldcup.sfg.io/matches/today')
   .then(checkStatus).then(function(response) {
     return response.json()
   }).then(function(data) {
-    parseMatches(data)
+    initialDraw(data)
   }).catch(function(error) {
     console.log('Fetch Error :-S', error)
   })
 
-function parseMatches(data) {
+function pollUpdates() {
+  fetch('https://worldcup.sfg.io/matches/today')
+  .then(checkStatus).then(function(response) {
+    return response.json()
+  }).then(function(data) {
+    updateMatch(data)
+  }).catch(function(error) {
+    console.log('Fetch Error :-S', error)
+  })
+  setTimeout(pollUpdates, 10000)
+}
+
+pollUpdates()
+
+function initialDraw(data) {
   const CURRENT_MATCHES = document.getElementById('currentMatches')
-  data.map(function(obj) {
+  data.map(function(obj, index) {
     const CURRENT_MATCH = document.createElement('div')
     addClass(CURRENT_MATCH, 'current-match')
     const HOME_TEAM = obj.home_team
     const AWAY_TEAM = obj.away_team
     const MATCH_TIME = dayjs(obj.datetime).format('DD-MMM, HHmm')
     const DIV_DATA = `
-      <p class="cm-date">${MATCH_TIME}</p>
-      <p class="cm-home"><span class="emoji" role="img" tabindex="0" aria-label="${HOME_TEAM.country}">${EMOJI[HOME_TEAM.country]}</span></p>
+      <p id="matchTime${index}" class="cm-date">${MATCH_TIME}</p>
+      <p id="homeTeam${index}" class="cm-home"><span class="emoji" role="img" tabindex="0" aria-label="${HOME_TEAM.country}">${EMOJI[HOME_TEAM.country]}</span></p>
       <p class="cm-vs">${HOME_TEAM.goals} – ${AWAY_TEAM.goals}</p> 
-      <p class="cm-away"><span class="emoji" role="img" tabindex="0" aria-label="${AWAY_TEAM.country}">${EMOJI[AWAY_TEAM.country]}</span></p>
-      <p class="cm-time">${obj.time}</p>
+      <p id="awayTeam${index}" class="cm-away"><span class="emoji" role="img" tabindex="0" aria-label="${AWAY_TEAM.country}">${EMOJI[AWAY_TEAM.country]}</span></p>
+      <p id="runningTime${index}" class="cm-time">${obj.time}</p>
     `
     CURRENT_MATCH.innerHTML = DIV_DATA
     CURRENT_MATCHES.appendChild(CURRENT_MATCH)
+  })
+}
+
+function updateMatch(data) {
+  data.map(function(obj, index) {
+    const HOME_TEAM = `<span class="emoji" role="img" tabindex="0" aria-label="${obj.home_team.country}">${EMOJI[obj.home_team.country]}</span>`
+    const AWAY_TEAM = `<span class="emoji" role="img" tabindex="0" aria-label="${obj.away_team.country}">${EMOJI[obj.away_team.country]}</span>`
+    document.getElementById('matchTime' + index).innerHTML = dayjs(obj.datetime).format('DD-MMM, HHmm')
+    document.getElementById('homeTeam' + index).innerHTML = HOME_TEAM
+    document.getElementById('awayTeam' + index).innerHTML = AWAY_TEAM
+    document.getElementById('runningTime' + index).innerHTML = obj.time
   })
 }
 
