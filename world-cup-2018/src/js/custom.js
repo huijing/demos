@@ -141,3 +141,36 @@ function addClass(el, className) {
   } else if (!hasClass(el, className)) el.className += " " + className
 }
 
+fetch('https://worldcup.sfg.io/matches')
+  .then(checkStatus).then(function(response) {
+    return response.json()
+  }).then(function(data) {
+    buildKnockOut(data)
+  }).catch(function(error) {
+    console.log('Fetch Error :-S', error)
+  })
+
+function buildKnockOut(data) {
+  data.map(function(obj, index) {
+    if (isGroup16(obj)) {
+      const HOME_TEAM = `<span class="emoji" role="img" tabindex="0" aria-label="${obj.home_team.country}">${EMOJI[obj.home_team.country]}</span>`
+      const AWAY_TEAM = `<span class="emoji" role="img" tabindex="0" aria-label="${obj.away_team.country}">${EMOJI[obj.away_team.country]}</span>`
+    }
+  })
+}
+
+function isGroup16(matches) {
+  return matches.stage_name === 'Round of 16'
+}
+
+function isQuarterFinals(matches) {
+  return matches.stage_name === 'Quarter-finals'
+}
+
+function isSemiFinals(matches) {
+  return matches.stage_name === 'Semi-finals'
+}
+
+function isFinal(match) {
+  return matches.stage_name === 'Final'
+}
