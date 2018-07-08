@@ -4,12 +4,105 @@
 <h1>World Cup 2018</h1>
 
 <h2>Today's matches</h2>
-<div id="currentMatches" class="current-matches"></div>
+<div class="matches-wrapper">
+  <div id="currentMatches" class="current-matches">
+    <em>There are no matches today.</em>
+  </div>
+  <button type="button" id="refreshMatches">Refresh</button>
+</div>
+
+<hr>
 
 <h2>Knock-out stage</h2>
-<div id="knockOutStage">
-  <div class="ko-match"></div>
+<div id="knockOutStage" class="ko-stages">
+  <div id="eighths" class="ko-stage jsKoStage">
+    <h4>Round of 16</h4>
+    {% for i in range(48, 56) -%}
+    <div id="match{{ i }}" class="ko-match">
+      <p class="ko-team">
+        <span class="ko-flag jsKoHomeFlag" role="img" tabindex="0" aria-label="Blank flag">&#x1F3F4;</span>
+        <span class="ko-country jsKoHomeTeam">Home</span>
+        <span class="ko-score jsKoHomeScore">-</span>
+      </p>
+      <p class="ko-team">
+        <span class="ko-flag jsKoAwayFlag" role="img" tabindex="0" aria-label="Blank flag">&#x1F3F4;</span>
+        <span class="ko-country jsKoAwayTeam">Away</span>
+        <span class="ko-score jsKoAwayScore">-</span>
+      </p>
+      <p class="ko-status"><small class="jsKoTime">Time</small></p>
+    </div>
+    {%- endfor %}
+  </div>
+  <div id="quarters" class="ko-stage jsKoStage">
+    <h4>Quarter-finals</h4>
+    {% for i in range(56, 60) -%}
+    <div id="match{{ i }}" class="ko-match">
+      <p class="ko-team">
+        <span class="ko-flag jsKoHomeFlag" role="img" tabindex="0" aria-label="Blank flag">&#x1F3F4;</span>
+        <span class="ko-country jsKoHomeTeam">Home</span>
+        <span class="ko-score jsKoHomeScore">-</span>
+      </p>
+      <p class="ko-team">
+        <span class="ko-flag jsKoAwayFlag" role="img" tabindex="0" aria-label="Blank flag">&#x1F3F4;</span>
+        <span class="ko-country jsKoAwayTeam">Away</span>
+        <span class="ko-score jsKoAwayScore">-</span>
+      </p>
+      <p class="ko-status"><small class="jsKoTime">Time</small></p>
+    </div>
+    {%- endfor %}
+  </div>
+  <div id="semis" class="ko-stage jsKoStage">
+    <h4>Semi-finals</h4>
+    {% for i in range(60, 62) -%}
+    <div id="match{{ i }}" class="ko-match">
+      <p class="ko-team">
+        <span class="ko-flag jsKoHomeFlag" role="img" tabindex="0" aria-label="Blank flag">&#x1F3F4;</span>
+        <span class="ko-country jsKoHomeTeam">Home</span>
+        <span class="ko-score jsKoHomeScore">-</span>
+      </p>
+      <p class="ko-team">
+        <span class="ko-flag jsKoAwayFlag" role="img" tabindex="0" aria-label="Blank flag">&#x1F3F4;</span>
+        <span class="ko-country jsKoAwayTeam">Away</span>
+        <span class="ko-score jsKoAwayScore">-</span>
+      </p>
+      <p class="ko-status"><small class="jsKoTime">Time</small></p>
+    </div>
+    {%- endfor %}
+  </div>
+  <div id="final" class="ko-stage jsKoStage">
+    <h4>Final</h4>
+    <div id="match63" class="ko-match">
+      <p class="ko-team">
+        <span class="ko-flag jsKoHomeFlag" role="img" tabindex="0" aria-label="Blank flag">&#x1F3F4;</span>
+        <span class="ko-country jsKoHomeTeam">Home</span>
+        <span class="ko-score jsKoHomeScore">-</span>
+      </p>
+      <p class="ko-team">
+        <span class="ko-flag jsKoAwayFlag" role="img" tabindex="0" aria-label="Blank flag">&#x1F3F4;</span>
+        <span class="ko-country jsKoAwayTeam">Away</span>
+        <span class="ko-score jsKoAwayScore">-</span>
+      </p>
+      <p class="ko-status"><small class="jsKoTime">Time</small></p>
+    </div>
+    
+    <h4>3rd-4th Placing</h4>
+    <div id="match62" class="ko-match">
+      <p class="ko-team">
+        <span class="ko-flag jsKoHomeFlag" role="img" tabindex="0" aria-label="Blank flag">&#x1F3F4;</span>
+        <span class="ko-country jsKoHomeTeam">Home</span>
+        <span class="ko-score jsKoHomeScore">-</span>
+      </p>
+      <p class="ko-team">
+        <span class="ko-flag jsKoAwayFlag" role="img" tabindex="0" aria-label="Blank flag">&#x1F3F4;</span>
+        <span class="ko-country jsKoAwayTeam">Away</span>
+        <span class="ko-score jsKoAwayScore">-</span>
+      </p>
+      <p class="ko-status"><small class="jsKoTime">Time</small></p>
+    </div>
+  </div>
 </div>
+
+<hr>
 
 <h2>Group Tables</h2>
 <div class="group-tables">
@@ -32,5 +125,7 @@
   </div>
   {%- endfor %}
 </div>
+
+<div id="error" class="has-error hide-top">There is an error.</div>
 
 {% endblock %}

@@ -30,16 +30,138 @@ const EMOJI = {
   "Colombia": "&#x1F1E8;&#x1F1F4;",
   "Senegal": "&#x1F1F8;&#x1F1F3;",
   "Japan": "&#x1F1EF;&#x1F1F5;",
-  "Poland": "&#x1F1F5;&#x1F1F1;"
+  "Poland": "&#x1F1F5;&#x1F1F1;",
+  "To Be Determined": "&#x1F3F4;"
 }
 
+function showError(error) {
+  const errorMsg = document.getElementById('error')
+  removeClass(errorMsg, 'hide-top')
+  errorMsg.innerHTML = 'Ack! Data not loaded because of this cryptic message: ' + error
+}
+// Populate data for current matches
+fetch('https://worldcup.sfg.io/matches/today')
+  .then(checkStatus).then(function(response) {
+    return response.json()
+  }).then(function(data) {
+    initialDraw(data)
+  }).catch(function(error) {
+    showError(error)
+  })
+
+const refreshMatches = document.getElementById('refreshMatches')
+refreshMatches.addEventListener('click', refreshMatchData, false)
+
+function initialDraw(data) {
+  const CURRENT_MATCHES = document.getElementById('currentMatches')
+  data.map(function(obj, index) {
+    const CURRENT_MATCH = document.createElement('div')
+    addClass(CURRENT_MATCH, 'current-match')
+    const HOME_TEAM = obj.home_team
+    const AWAY_TEAM = obj.away_team
+    const MATCH_TIME = dayjs(obj.datetime).format('DD-MMM, HHmm')
+    const DIV_DATA = `
+      <p id="matchTime${index}" class="cm-date">${MATCH_TIME}</p>
+      <p id="homeTeam${index}" class="cm-home"><span class="current-flag" role="img" tabindex="0" aria-label="${HOME_TEAM.country}">${EMOJI[HOME_TEAM.country]}</span></p>
+      <p class="cm-vs">${HOME_TEAM.goals} – ${AWAY_TEAM.goals}</p> 
+      <p id="awayTeam${index}" class="cm-away"><span class="current-flag" role="img" tabindex="0" aria-label="${AWAY_TEAM.country}">${EMOJI[AWAY_TEAM.country]}</span></p>
+      <p id="runningTime${index}" class="cm-time">${obj.time}</p>
+    `
+    CURRENT_MATCH.innerHTML = DIV_DATA
+    CURRENT_MATCHES.innerHTML = ''
+    CURRENT_MATCHES.appendChild(CURRENT_MATCH)
+  })
+}
+
+function refreshMatchData() {
+  fetch('https://worldcup.sfg.io/matches/today')
+    .then(checkStatus).then(function(response) {
+      return response.json()
+    }).then(function(data) {
+      console.log('clicked')
+      updateMatch(data)
+    }).catch(function(error) {
+      showError(error)
+    })
+}
+
+function updateMatch(data) {
+  data.map(function(obj, index) {
+    const HOME_TEAM = `<span class="current-flag" role="img" tabindex="0" aria-label="${obj.home_team.country}">${EMOJI[obj.home_team.country]}</span>`
+    const AWAY_TEAM = `<span class="current-flag" role="img" tabindex="0" aria-label="${obj.away_team.country}">${EMOJI[obj.away_team.country]}</span>`
+    document.getElementById('matchTime' + index).innerHTML = dayjs(obj.datetime).format('DD-MMM, HHmm')
+    document.getElementById('homeTeam' + index).innerHTML = HOME_TEAM
+    document.getElementById('awayTeam' + index).innerHTML = AWAY_TEAM
+    document.getElementById('runningTime' + index).innerHTML = obj.time
+  })
+}
+
+// Populate data for knock-out stages
+fetch('https://worldcup.sfg.io/matches')
+  .then(checkStatus).then(function(response) {
+    return response.json()
+  }).then(function(data) {
+    buildKnockOut(data)
+  }).catch(function(error) {
+    showError(error)
+  })
+
+function buildKnockOut(data) {
+  data.map(function(obj, index) {
+    const HOME_TEAM_NAME = document.querySelector('#match' + index + ' .jsKoHomeTeam')
+    const HOME_TEAM_FLAG = document.querySelector('#match' + index + ' .jsKoHomeFlag')
+    const HOME_TEAM_SCORE = document.querySelector('#match' + index + ' .jsKoHomeScore')
+    const AWAY_TEAM_NAME = document.querySelector('#match' + index + ' .jsKoAwayTeam')
+    const AWAY_TEAM_FLAG = document.querySelector('#match' + index + ' .jsKoAwayFlag')
+    const AWAY_TEAM_SCORE = document.querySelector('#match' + index + ' .jsKoAwayScore')
+    const MATCH_TIME = document.querySelector('#match' + index + ' .jsKoTime')
+
+    if (isKnockOutStage(obj) && confirmedTeam(obj)) {
+      HOME_TEAM_NAME.innerHTML = (!isCompleted(obj)) ? obj.home_team.country : obj.home_team.code
+      HOME_TEAM_FLAG.innerHTML = EMOJI[obj.home_team.country]
+      HOME_TEAM_FLAG.setAttribute('aria-label', obj.home_team.country)
+      HOME_TEAM_SCORE.innerHTML = (hasPenalties(obj) ? obj.home_team.goals + ' (' + obj.home_team.penalties + ')' : obj.home_team.goals)
+      
+      AWAY_TEAM_NAME.innerHTML = (!isCompleted(obj)) ? obj.away_team.country : obj.away_team.code
+      AWAY_TEAM_FLAG.innerHTML = EMOJI[obj.away_team.country]
+      AWAY_TEAM_FLAG.setAttribute('aria-label', obj.away_team.country)
+      AWAY_TEAM_SCORE.innerHTML = (hasPenalties(obj) ? obj.away_team.goals + ' (' + obj.away_team.penalties + ')' : obj.away_team.goals)
+
+      MATCH_TIME.innerHTML = (isCompleted(obj)) ? obj.time : dayjs(obj.datetime).format('DD-MMM, HHmm')
+    }
+
+    if (!confirmedTeam(obj)) {
+      HOME_TEAM_NAME.innerHTML = obj.home_team.code
+      AWAY_TEAM_NAME.innerHTML = obj.away_team.code
+      MATCH_TIME.innerHTML = dayjs(obj.datetime).format('DD-MMM, HHmm')
+    }
+  })
+}
+
+function isKnockOutStage(matches) {
+  return matches.stage_name !== 'First stage'
+}
+
+function confirmedTeam(matches) {
+  return matches.home_team_country !== null
+}
+
+function hasPenalties(matches) {
+  return matches.home_team.penalties !== 0 && matches.status === 'completed'
+}
+
+function isCompleted(matches) {
+  return matches.status === 'completed'
+}
+
+// Populate data for group stages
 fetch('https://worldcup.sfg.io/teams/group_results')
   .then(checkStatus).then(function(response) {
     return response.json()
   }).then(function(data) {
     displayGroups(data)
   }).catch(function(error) {
-    console.log('Fetch Error :-S', error)
+    showError(error)
   })
 
 function displayGroups(data) {
@@ -71,6 +193,7 @@ function populateGroupTable(teams, index) {
   })
 }
 
+// Utility functions
 function checkStatus(response) {
   if (response.status >= 200 && response.status < 300) {
     return response
@@ -81,96 +204,18 @@ function checkStatus(response) {
   }
 }
 
-fetch('https://worldcup.sfg.io/matches/today')
-  .then(checkStatus).then(function(response) {
-    return response.json()
-  }).then(function(data) {
-    initialDraw(data)
-  }).catch(function(error) {
-    console.log('Fetch Error :-S', error)
-  })
-
-function pollUpdates() {
-  fetch('https://worldcup.sfg.io/matches/today')
-  .then(checkStatus).then(function(response) {
-    return response.json()
-  }).then(function(data) {
-    updateMatch(data)
-  }).catch(function(error) {
-    console.log('Fetch Error :-S', error)
-  })
-  setTimeout(pollUpdates, 10000)
-}
-
-pollUpdates()
-
-function initialDraw(data) {
-  const CURRENT_MATCHES = document.getElementById('currentMatches')
-  data.map(function(obj, index) {
-    const CURRENT_MATCH = document.createElement('div')
-    addClass(CURRENT_MATCH, 'current-match')
-    const HOME_TEAM = obj.home_team
-    const AWAY_TEAM = obj.away_team
-    const MATCH_TIME = dayjs(obj.datetime).format('DD-MMM, HHmm')
-    const DIV_DATA = `
-      <p id="matchTime${index}" class="cm-date">${MATCH_TIME}</p>
-      <p id="homeTeam${index}" class="cm-home"><span class="emoji" role="img" tabindex="0" aria-label="${HOME_TEAM.country}">${EMOJI[HOME_TEAM.country]}</span></p>
-      <p class="cm-vs">${HOME_TEAM.goals} – ${AWAY_TEAM.goals}</p> 
-      <p id="awayTeam${index}" class="cm-away"><span class="emoji" role="img" tabindex="0" aria-label="${AWAY_TEAM.country}">${EMOJI[AWAY_TEAM.country]}</span></p>
-      <p id="runningTime${index}" class="cm-time">${obj.time}</p>
-    `
-    CURRENT_MATCH.innerHTML = DIV_DATA
-    CURRENT_MATCHES.appendChild(CURRENT_MATCH)
-  })
-}
-
-function updateMatch(data) {
-  data.map(function(obj, index) {
-    const HOME_TEAM = `<span class="emoji" role="img" tabindex="0" aria-label="${obj.home_team.country}">${EMOJI[obj.home_team.country]}</span>`
-    const AWAY_TEAM = `<span class="emoji" role="img" tabindex="0" aria-label="${obj.away_team.country}">${EMOJI[obj.away_team.country]}</span>`
-    document.getElementById('matchTime' + index).innerHTML = dayjs(obj.datetime).format('DD-MMM, HHmm')
-    document.getElementById('homeTeam' + index).innerHTML = HOME_TEAM
-    document.getElementById('awayTeam' + index).innerHTML = AWAY_TEAM
-    document.getElementById('runningTime' + index).innerHTML = obj.time
-  })
-}
-
 function addClass(el, className) {
   if (el.classList) {
     el.classList.add(className)
-  } else if (!hasClass(el, className)) el.className += " " + className
+  } else if (!hasClass(el, className)) el.className += ' ' + className
 }
 
-fetch('https://worldcup.sfg.io/matches')
-  .then(checkStatus).then(function(response) {
-    return response.json()
-  }).then(function(data) {
-    buildKnockOut(data)
-  }).catch(function(error) {
-    console.log('Fetch Error :-S', error)
-  })
-
-function buildKnockOut(data) {
-  data.map(function(obj, index) {
-    if (isGroup16(obj)) {
-      const HOME_TEAM = `<span class="emoji" role="img" tabindex="0" aria-label="${obj.home_team.country}">${EMOJI[obj.home_team.country]}</span>`
-      const AWAY_TEAM = `<span class="emoji" role="img" tabindex="0" aria-label="${obj.away_team.country}">${EMOJI[obj.away_team.country]}</span>`
-    }
-  })
-}
-
-function isGroup16(matches) {
-  return matches.stage_name === 'Round of 16'
-}
-
-function isQuarterFinals(matches) {
-  return matches.stage_name === 'Quarter-finals'
-}
-
-function isSemiFinals(matches) {
-  return matches.stage_name === 'Semi-finals'
-}
-
-function isFinal(match) {
-  return matches.stage_name === 'Final'
+function removeClass(el, className) {
+  if (el.classList) {
+    el.classList.remove(className)
+  }
+  else if (hasClass(el, className)) {
+    const reg = new RegExp('(\\s|^)' + className + '(\\s|$)')
+    el.className=el.className.replace(reg, ' ')
+  }
 }
