@@ -106,13 +106,37 @@ span[role=img][aria-label]:hover::after {
 }
 
 .ko-stages {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(8em, 1fr));
-  grid-gap: 1em;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .ko-stage {
   max-width: 15em;
+  margin: 0 1em;
+
+  &.active {
+    flex: 99;
+    min-width: 8em;
+  }
+
+  &:not(.active) {
+    font-size: 65%;
+    filter: grayscale(100%);
+    opacity: 0.5;
+    min-width: 9em;
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .ko-stage.active {
+    order: 1;
+  }
+
+  .ko-stage:not(.active) {
+    order: 2;
+  }
 }
 
 .ko-match {
@@ -128,19 +152,6 @@ span[role=img][aria-label]:hover::after {
   font-size: calc(1em + 3vw);
   line-height: 1;
   margin-right: 0.25em;
-}
-
-.ko-country {
-  opacity: 1;
-  transition: opacity 0.5s;
-  max-width: initial;
-}
-
-@media screen and (max-width: 37.5em) {
-  .faded {
-    opacity: 0;
-    max-width: 0;
-  }
 }
 
 .ko-score {

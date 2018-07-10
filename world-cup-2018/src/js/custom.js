@@ -108,6 +108,7 @@ fetch('https://worldcup.sfg.io/matches')
 
 function buildKnockOut(data) {
   data.map(function(obj, index) {
+    const MATCH_NUM = document.querySelector('#match' + index)
     const HOME_TEAM_NAME = document.querySelector('#match' + index + ' .jsKoHomeTeam')
     const HOME_TEAM_FLAG = document.querySelector('#match' + index + ' .jsKoHomeFlag')
     const HOME_TEAM_SCORE = document.querySelector('#match' + index + ' .jsKoHomeScore')
@@ -134,6 +135,10 @@ function buildKnockOut(data) {
       HOME_TEAM_NAME.innerHTML = obj.home_team.code
       AWAY_TEAM_NAME.innerHTML = obj.away_team.code
       MATCH_TIME.innerHTML = dayjs(obj.datetime).format('DD-MMM, HHmm')
+    }
+
+    if (confirmedTeam(obj) && !isCompleted(obj)) {
+      addClass(MATCH_NUM.parentElement, 'active')
     }
   })
 }
