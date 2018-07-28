@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=EB+Garamond');
+
 html {
   box-sizing: border-box;
   height: 100%;
@@ -10,8 +12,6 @@ html {
   margin: 0;
   padding: 0;
 }
-
-@import url('https://fonts.googleapis.com/css?family=EB+Garamond');
 
 main {
   max-width: 50em;
@@ -60,6 +60,18 @@ img {
 
 @media screen and (min-width: 30em) {
   @supports not (-ms-wrap-flow: both) {
+    main::before {
+      display: block;
+      content: 'Looks like your browser doesn\'t support Exclusions yet. It works on Edge though. ¯\\_(ツ)_/¯';
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 15em;
+      background-color: rgba(255, 0, 0, 0.2);
+      padding: 0.5em;
+      opacity: 0.5;
+    }
+ 
     .wf-start,
     .wf-min {
       float: left;
