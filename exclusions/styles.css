@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css?family=EB+Garamond");
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 100%; }
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+  margin: 0;
+  padding: 0; }
+
+main {
+  max-width: 50em;
+  margin: 0 auto;
+  padding: 1em;
+  font-family: 'EB Garamond', serif;
+  font-size: 115%; }
+
+div {
+  position: relative; }
+
+h1 {
+  font-size: -webkit-calc(1.2em + 3vw);
+  font-size: calc(1.2em + 3vw);
+  line-height: 1.1;
+  text-align: center;
+  margin-bottom: 0.5em; }
+
+p {
+  margin-bottom: 1em;
+  line-height: 1.4; }
+
+ol {
+  list-style: georgian inside;
+  margin-bottom: 1em;
+  line-height: 1.4; }
+
+img {
+  max-width: 100%; }
+
+.wrap-flow {
+  width: 250px; }
+
+@media screen and (max-width: 30em) {
+  img {
+    display: block;
+    margin: 0 auto; } }
+
+@media screen and (min-width: 30em) {
+  @supports not (-ms-wrap-flow: both) {
+    .wf-start,
+    .wf-min {
+      float: left;
+      margin-right: 1em; }
+    .wf-both,
+    .wf-end,
+    .wf-max {
+      float: right;
+      margin-left: 1em; }
+    .wrap-through {
+      max-width: 100%; } }
+  @supports (-ms-wrap-flow: both) {
+    .wf-start {
+      -ms-wrap-flow: start;
+      position: absolute;
+      right: 15%;
+      padding-left: 1em; }
+    .wf-both {
+      -ms-wrap-flow: both;
+      position: absolute;
+      left: -webkit-calc(50% - 125px);
+      left: calc(50% - 125px);
+      top: 11em; }
+    .wf-end {
+      -ms-wrap-flow: end;
+      position: absolute;
+      left: 15%;
+      padding-right: 1em; }
+    .wf-min {
+      -ms-wrap-flow: minimum;
+      position: absolute;
+      right: 25%;
+      padding-right: 1em; }
+    .wf-max {
+      -ms-wrap-flow: maximum;
+      position: absolute;
+      right: 25%;
+      padding-right: 1em; }
+    .wrap-through {
+      position: absolute;
+      opacity: 0.2;
+      -ms-wrap-through: wrap;
+      left: 0;
+      right: 0;
+      width: 100%; } } }
+
+.byline {
+  font-size: 85%;
+  font-style: italic;
+  text-align: right; }
+
+.qns {
+  font-style: italic;
+  font-size: 110%;
+  margin-bottom: 0.25em; }
