@@ -71,8 +71,9 @@ img {
     .wf-max {
       float: right;
       margin-left: 1em; }
-    .wrap-through {
-      max-width: 100%; } }
+    .wf-clear {
+      display: block;
+      margin: 0 auto; } }
   @supports (-ms-wrap-flow: both) {
     .wf-start {
       -ms-wrap-flow: start;
@@ -100,13 +101,19 @@ img {
       position: absolute;
       right: 25%;
       padding-right: 1em; }
-    .wrap-through {
+    .wf-clear {
+      -ms-wrap-flow: clear;
       position: absolute;
-      opacity: 0.2;
-      -ms-wrap-through: wrap;
-      left: 0;
-      right: 0;
-      width: 100%; } } }
+      left: -webkit-calc(50% - 125px);
+      left: calc(50% - 125px); }
+    .wt-none {
+      -ms-wrap-through: none; }
+    .wt-exclusion {
+      -ms-wrap-flow: both;
+      width: 30em;
+      left: -webkit-calc(50% - 15em);
+      left: calc(50% - 15em);
+      opacity: 0.2; } } }
 
 .byline {
   font-size: 85%;
