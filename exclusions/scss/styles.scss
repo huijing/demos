@@ -59,40 +59,44 @@ img {
 }
 
 @media screen and (min-width: 30em) {
-  @supports not (-ms-wrap-flow: both) {
-    main::before {
-      display: block;
-      content: 'Looks like your browser doesn\'t support Exclusions yet. It works on Edge though. ¯\\_(ツ)_/¯';
-      position: absolute;
-      right: 0;
-      top: 0;
-      width: 15em;
-      background-color: rgba(255, 0, 0, 0.2);
-      padding: 0.5em;
-      opacity: 0.5;
-    }
- 
-    .wf-start,
-    .wf-min {
-      float: left;
-      margin-right: 1em;
-    }
-    
-    .wf-both,
-    .wf-end,
-    .wf-max {
-      float: right;
-      margin-left: 1em;
-    }
-    
-    .wf-clear {
-      display: block;
-      margin: 0 auto;
-    }
+  main::before {
+    display: block;
+    content: 'Looks like your browser doesn\'t support Exclusions yet. It works on Edge though. ¯\\_(ツ)_/¯';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 15em;
+    background-color: rgba(255, 0, 0, 0.2);
+    padding: 0.5em;
+    opacity: 0.5;
+  }
+
+  .wf-start,
+  .wf-min {
+    float: left;
+    margin-right: 1em;
+  }
+
+  .wf-both,
+  .wf-end,
+  .wf-max {
+    float: right;
+    margin-left: 1em;
+  }
+
+  .wf-clear {
+    display: block;
+    margin: 0 auto;
   }
 
   @supports (-ms-wrap-flow: both) {
+    main::before {
+      content: '';
+    }
+  
     .wf-start {
+      float: none;
+      margin: initial;
       -ms-wrap-flow: start;
       position: absolute;
       right: 15%;
@@ -100,6 +104,8 @@ img {
     }
    
     .wf-both {
+      float: none;
+      margin: initial;
       -ms-wrap-flow: both;
       position: absolute;
       left: calc(50% - 125px);
@@ -107,6 +113,8 @@ img {
     }
     
     .wf-end {
+      float: none;
+      margin: initial;
       -ms-wrap-flow: end;
       position: absolute;
       left: 15%;
@@ -114,6 +122,8 @@ img {
     }
     
     .wf-min {
+      float: none;
+      margin: initial;
       -ms-wrap-flow: minimum;
       position: absolute;
       right: 25%;
@@ -121,6 +131,8 @@ img {
     }
     
     .wf-max {
+      float: none;
+      margin: initial;
       -ms-wrap-flow: maximum;
       position: absolute;
       right: 25%;
@@ -128,6 +140,8 @@ img {
     }
     
     .wf-clear {
+      float: none;
+      margin: initial;
       -ms-wrap-flow: clear;
       position: absolute;
       left: calc(50% - 125px);
@@ -138,6 +152,8 @@ img {
     }
   
     .wt-exclusion {
+      float: none;
+      margin: initial;
       -ms-wrap-flow: both;
       width: 30em;
       left: calc(50% - 15em);
