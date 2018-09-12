@@ -1,0 +1,34 @@
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 100%; }
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+  margin: 0;
+  padding: 0; }
+
+body {
+  background: black;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+
+main {
+  margin: auto;
+  text-align: center; }
+
+canvas {
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor; }
+
+.hidden {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0; }

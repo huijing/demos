@@ -1,0 +1,31 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>CSS-Minsk-JS logo</title>
+  <meta name="description" content="Pixelate the CSS-Minsk-JS logo">
+  <meta name="author" content="Chen Hui Jing">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <main>
+    <canvas id="canvas" width="720" height="600"></canvas>
+    <img id="logo" src="img/logo.svg" alt="CSS-Minsk-JS logo" class="hidden">
+    <div>
+      <input id="pixels" type="range" min="1" max="16" value="2">
+    </div>
+  </main>
+  <script src="scripts.js"></script>
+</body>
+
+</html>
