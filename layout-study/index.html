@@ -1,0 +1,154 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>A Study in CSS layout</title>
+  <meta name="description" content="A study of the various methods to achieve a 4-2-1 flexible grid with only CSS">
+  <meta name="author" content="Chen Hui Jing">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <h1>A study in CSS layout</h1>
+  <section>
+    <h2>Inline-block method</h2>
+    <div class="inline__item"><div class="inline__item">inner 1</div><div class="inline__item">inner 2</div><div class="inline__item">inner 3</div><div class="inline__item">inner 4</div></div><div class="inline__item">
+      <p>2</p>
+    </div><div class="inline__item">
+      <p>3</p>
+    </div><div class="inline__item">
+      <p>4</p>
+    </div><div class="inline__item">
+      <p>1</p>
+    </div><div class="inline__item">
+      <p>2</p>
+      </div><div class="inline__item"><div class="inline__item">inner 1</div><div class="inline__item">inner 2</div><div class="inline__item">inner 3</div><div class="inline__item">inner 4</div></div><div class="inline__item">
+      <p>4</p>
+    </div>
+  </section>
+
+  <hr>
+
+  <section>
+    <h2>Float method</h2>
+    <div class="float__item">
+      <div class="float__item">inner 1</div>
+      <div class="float__item">inner 2</div>
+      <div class="float__item">inner 3</div>
+      <div class="float__item">inner 4</div>
+    </div>
+    <div class="float__item">
+      <p>2</p>
+    </div>
+    <div class="float__item">
+      <p>3</p>
+    </div>
+    <div class="float__item">
+      <p>4</p>
+    </div>
+    <div class="float__item">
+      <p>1</p>
+    </div>
+    <div class="float__item">
+      <p>2</p>
+    </div>
+    <div class="float__item">
+      <div class="float__item">inner 1</div>
+      <div class="float__item">inner 2</div>
+      <div class="float__item">inner 3</div>
+      <div class="float__item">inner 4</div>
+    </div>
+    <div class="float__item">
+      <p>4</p>
+    </div>
+  </section>
+
+  <hr>
+
+  <section>
+    <h2>Flex method</h2>
+    <div class="flex">
+      <div class="flex__item flex">
+        <div class="flex__item">inner 1</div>
+        <div class="flex__item">inner 2</div>
+        <div class="flex__item">inner 3</div>
+        <div class="flex__item">inner 4</div>
+      </div>
+      <div class="flex__item">
+        <p>2</p>
+      </div>
+      <div class="flex__item">
+        <p>3</p>
+      </div>
+      <div class="flex__item">
+        <p>4</p>
+      </div>
+      <div class="flex__item">
+        <p>1</p>
+      </div>
+      <div class="flex__item">
+        <p>2</p>
+      </div>
+      <div class="flex__item flex">
+        <div class="flex__item">inner 1</div>
+        <div class="flex__item">inner 2</div>
+        <div class="flex__item">inner 3</div>
+        <div class="flex__item">inner 4</div>
+      </div>
+      <div class="flex__item">
+        <p>4</p>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+
+  <section>
+    <h2>Grid method</h2>
+    <div class="grid">
+      <div class="grid__item grid">
+        <div class="grid__item">inner 1</div>
+        <div class="grid__item">inner 2</div>
+        <div class="grid__item">inner 3</div>
+        <div class="grid__item">inner 4</div>
+      </div>
+      <div class="grid__item">
+        <p>2</p>
+      </div>
+      <div class="grid__item">
+        <p>3</p>
+      </div>
+      <div class="grid__item">
+        <p>4</p>
+      </div>
+      <div class="grid__item">
+        <p>1</p>
+      </div>
+      <div class="grid__item">
+        <p>2</p>
+      </div>
+      <div class="grid__item grid">
+        <div class="grid__item">inner 1</div>
+        <div class="grid__item">inner 2</div>
+        <div class="grid__item">inner 3</div>
+        <div class="grid__item">inner 4</div>
+      </div>
+      <div class="grid__item">
+        <p>4</p>
+      </div>
+    </div>
+  </section>
+  <script src="scripts.js"></script>
+</body>
+
+</html>

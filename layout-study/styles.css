@@ -1,0 +1,108 @@
+@font-face {
+  font-family: 'iA writer duospace';
+  src: url("../fonts/iawriterduospace-regular.woff2") format("woff2"), url("../fonts/iawriterduospace-regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'iA writer duospace';
+  src: url("../fonts/iawriterduospace-bold.woff2") format("woff2"), url("../fonts/iawriterduospace-bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal; }
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 100%; }
+
+body {
+  font-family: 'iA writer duospace', sans-serif; }
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+  margin: 0;
+  padding: 0; }
+
+section {
+  padding: 2em 1em;
+  overflow: auto; }
+
+h1 {
+  text-align: center; }
+
+h2 {
+  margin-bottom: 0.5em; }
+
+div[class$="item"] {
+  border: 1px solid black; }
+
+/* Inline-block method */
+@media screen and (min-width: 360px) {
+  .inline__item {
+    display: inline-block;
+    width: 50%; } }
+
+@media screen and (min-width: 720px) {
+  .inline__item {
+    width: 25%; } }
+
+/* Floats method */
+@media screen and (min-width: 360px) and (max-width: 719px) {
+  .float__item {
+    float: left;
+    width: 50%; }
+  .float__item:nth-of-type(even) {
+    clear: right; }
+  .float__item:nth-of-type(2n + 1) {
+    clear: left; } }
+
+@media screen and (min-width: 720px) {
+  .float__item {
+    float: left;
+    width: 25%; }
+  .float__item:nth-of-type(4n+1) {
+    clear: left; } }
+
+/* Flex method */
+@media screen and (min-width: 360px) {
+  .flex {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap; }
+  .flex__item {
+    -webkit-box-flex: 50%;
+    -webkit-flex: 50%;
+        -ms-flex: 50%;
+            flex: 50%; } }
+
+@media screen and (min-width: 720px) {
+  .flex {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap; }
+  .flex__item {
+    -webkit-box-flex: 25%;
+    -webkit-flex: 25%;
+        -ms-flex: 25%;
+            flex: 25%; } }
+
+/* Grid method */
+@supports (display: grid) {
+  @media screen and (min-width: 360px) {
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 50%); } }
+  @media screen and (min-width: 720px) {
+    .grid {
+      grid-template-columns: repeat(4, 25%); } } }
