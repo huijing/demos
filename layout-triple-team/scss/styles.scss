@@ -1,0 +1,247 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+  font-size: calc(1em + 0.75vw);
+}
+
+body {
+  height: 100%;
+  padding: 1em;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+h2,
+h3,
+h4 {
+  margin-bottom: 0.5em;
+}
+
+hr {
+  margin: 1em 0;
+}
+
+img[src$=".svg"] {
+  max-height: 5em;
+}
+
+.box {
+  border: 1px solid;
+}
+
+.flex-basic {
+  display: flex;
+  margin-bottom: 1em;
+}
+
+.flex-alignment {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  margin-bottom: 1em;
+
+  .box:nth-child(2n) {
+    padding: 2em;
+  }
+
+  .box:nth-child(2n + 1) {
+    padding: 1.5em 1em 0.5em;
+  }
+
+  .box:nth-child(3n) {
+    padding: 1em;
+  }
+  
+  .box:nth-child(3n + 2) {
+    font-size: 1.5em;
+  }
+}
+
+.flex-uc1 {
+  display: flex;
+  height: 60vh;
+  border: 1px dashed;
+  margin-bottom: 1em;
+
+  img {
+    margin: auto;
+    height: 5em;
+  }
+}
+
+.flex-uc2 {
+  display: flex;
+  margin-bottom: 1em;
+  align-items: center;
+  gap: 1em;
+
+  img {
+    height: 3em;
+  }
+
+  a:last-child {
+    margin-left: auto;
+  }
+}
+
+.flex-uc3 {
+  display: flex;
+  gap: 1em;
+  margin-bottom: 1em;
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    width: 12em;
+    padding: 1em;
+    box-shadow: 2px 2px 8px grey;
+  }
+}
+
+.grid1 {
+  display: grid;
+  grid-template-columns: 5em 5em 5em;
+  grid-template-rows: 5em 5em;
+}
+
+.grid2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(6em, 1fr));
+}
+
+.grid3 {
+  display: grid;
+  grid-template-columns: 1fr auto minmax(200px, 400px);
+}
+
+.grid4 {
+  display: grid;
+  grid-template-columns: repeat(6, 3em);
+  grid-template-rows: repeat(6, 3em);
+
+  .box {
+    display: flex;
+  }
+
+  .emoji {
+    font-size: 2em;
+    margin: auto;
+  }
+}
+
+.grid5 {
+  display: grid;
+  grid-template-columns: repeat(6, 3em);
+  grid-template-rows: repeat(6, 3em);
+  grid-template-areas: 'apple apple apple . . .'
+                       'apple apple apple . . .'
+                       'apple apple apple banana banana .'
+                       '. . . banana banana .'
+                       '. . . . . . '
+                       'cherry cherry cherry cherry cherry cherry';
+
+  .box:first-child { grid-area: apple }
+  .box:nth-child(2) { grid-area: banana }
+  .box:nth-child(3) { grid-area: cherry }
+}
+
+.grid6 {
+  height: 60vmin;
+  width: 60vmin;
+  display: grid;
+  grid-template-columns: repeat(4, 10vmin);
+  grid-gap: 1em;
+  grid-auto-rows: 10vmin;
+  grid-template-areas: 
+    "a a b b"
+    "a a b b"
+    "c c d d"
+    "c c d d";
+  justify-content: normal;
+  align-content: normal;
+  justify-items: normal;
+  align-items: normal;
+  
+  .box:first-child {
+    font-size: 2em;
+    grid-area: a;
+  }
+
+  .box:nth-child(2) {
+    padding: 2em;
+    grid-area: b;
+  }
+
+  .box:nth-child(3) {
+    padding: 0.5em;
+    font-size: 1.5em;
+    grid-area: c;
+  }
+
+  .box:nth-child(4) {
+    grid-area: d;
+  }
+}
+
+.shapes-basic {
+  article {
+    margin-bottom: 1em;
+    clear: both;
+    min-height: 8em;
+    font-size: 70%;
+    width: 60%;
+  }
+
+  .shapes {
+    width: 7.5em;
+    height: 7.5em;
+    background-color: green;
+  }
+
+  .circle {
+    shape-outside: circle();
+    clip-path: circle();
+    float: left;
+    border-radius: 50%;
+  }
+
+  .ellipse {
+    shape-outside: ellipse();
+    clip-path: ellipse();
+    width: 5em;
+    float: left;
+    border-radius: 50%;
+  }
+
+  .inset {
+    shape-outside: inset(0px round 2em);
+    clip-path: inset(0px round 2em);
+    float: left;
+    border-radius: 2em;
+  }
+
+  .polygon {
+    clip-path: polygon(0 0, 0 7.5em, 7.5em 3.75em);
+    shape-outside: polygon(0 0, 0 7.5em, 7.5em 3.75em);
+    float: left;
+  }
+}
+
+.shapes-image {
+  width: 65%;
+
+  img {
+    shape-image-threshold: .5;
+    shape-margin: 0.1em;
+    shape-outside: url('img/beyonce.png');
+    float: left;
+    max-height: 65vmin;
+  }
+}

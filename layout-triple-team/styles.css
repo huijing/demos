@@ -1,0 +1,238 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 100%;
+  font-size: -webkit-calc(1em + 0.75vw);
+  font-size: calc(1em + 0.75vw); }
+
+body {
+  height: 100%;
+  padding: 1em; }
+
+div {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+h2,
+h3,
+h4 {
+  margin-bottom: 0.5em; }
+
+hr {
+  margin: 1em 0; }
+
+img[src$=".svg"] {
+  max-height: 5em; }
+
+.box {
+  border: 1px solid; }
+
+.flex-basic {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 1em; }
+
+.flex-alignment {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  height: 100%;
+  margin-bottom: 1em; }
+  .flex-alignment .box:nth-child(2n) {
+    padding: 2em; }
+  .flex-alignment .box:nth-child(2n + 1) {
+    padding: 1.5em 1em 0.5em; }
+  .flex-alignment .box:nth-child(3n) {
+    padding: 1em; }
+  .flex-alignment .box:nth-child(3n + 2) {
+    font-size: 1.5em; }
+
+.flex-uc1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 60vh;
+  border: 1px dashed;
+  margin-bottom: 1em; }
+  .flex-uc1 img {
+    margin: auto;
+    height: 5em; }
+
+.flex-uc2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 1em;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1em; }
+  .flex-uc2 img {
+    height: 3em; }
+  .flex-uc2 a:last-child {
+    margin-left: auto; }
+
+.flex-uc3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1em;
+  margin-bottom: 1em; }
+  .flex-uc3 .card {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 12em;
+    padding: 1em;
+    -webkit-box-shadow: 2px 2px 8px grey;
+            box-shadow: 2px 2px 8px grey; }
+
+.grid1 {
+  display: grid;
+  grid-template-columns: 5em 5em 5em;
+  grid-template-rows: 5em 5em; }
+
+.grid2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(6em, 1fr)); }
+
+.grid3 {
+  display: grid;
+  grid-template-columns: 1fr auto minmax(200px, 400px); }
+
+.grid4 {
+  display: grid;
+  grid-template-columns: repeat(6, 3em);
+  grid-template-rows: repeat(6, 3em); }
+  .grid4 .box {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; }
+  .grid4 .emoji {
+    font-size: 2em;
+    margin: auto; }
+
+.grid5 {
+  display: grid;
+  grid-template-columns: repeat(6, 3em);
+  grid-template-rows: repeat(6, 3em);
+  grid-template-areas: 'apple apple apple . . .' 'apple apple apple . . .' 'apple apple apple banana banana .' '. . . banana banana .' '. . . . . . ' 'cherry cherry cherry cherry cherry cherry'; }
+  .grid5 .box:first-child {
+    grid-area: apple; }
+  .grid5 .box:nth-child(2) {
+    grid-area: banana; }
+  .grid5 .box:nth-child(3) {
+    grid-area: cherry; }
+
+.grid6 {
+  height: 60vmin;
+  width: 60vmin;
+  display: grid;
+  grid-template-columns: repeat(4, 10vmin);
+  grid-gap: 1em;
+  grid-auto-rows: 10vmin;
+  grid-template-areas: "a a b b" "a a b b" "c c d d" "c c d d";
+  -webkit-box-pack: normal;
+  -webkit-justify-content: normal;
+      -ms-flex-pack: normal;
+          justify-content: normal;
+  -webkit-align-content: normal;
+      -ms-flex-line-pack: normal;
+          align-content: normal;
+  justify-items: normal;
+  -webkit-box-align: normal;
+  -webkit-align-items: normal;
+      -ms-flex-align: normal;
+          align-items: normal; }
+  .grid6 .box:first-child {
+    font-size: 2em;
+    grid-area: a; }
+  .grid6 .box:nth-child(2) {
+    padding: 2em;
+    grid-area: b; }
+  .grid6 .box:nth-child(3) {
+    padding: 0.5em;
+    font-size: 1.5em;
+    grid-area: c; }
+  .grid6 .box:nth-child(4) {
+    grid-area: d; }
+
+.shapes-basic article {
+  margin-bottom: 1em;
+  clear: both;
+  min-height: 8em;
+  font-size: 70%;
+  width: 60%; }
+
+.shapes-basic .shapes {
+  width: 7.5em;
+  height: 7.5em;
+  background-color: green; }
+
+.shapes-basic .circle {
+  -webkit-shape-outside: circle();
+          shape-outside: circle();
+  -webkit-clip-path: circle();
+          clip-path: circle();
+  float: left;
+  -webkit-border-radius: 50%;
+          border-radius: 50%; }
+
+.shapes-basic .ellipse {
+  -webkit-shape-outside: ellipse();
+          shape-outside: ellipse();
+  -webkit-clip-path: ellipse();
+          clip-path: ellipse();
+  width: 5em;
+  float: left;
+  -webkit-border-radius: 50%;
+          border-radius: 50%; }
+
+.shapes-basic .inset {
+  -webkit-shape-outside: inset(0px round 2em);
+          shape-outside: inset(0px round 2em);
+  -webkit-clip-path: inset(0px round 2em);
+          clip-path: inset(0px round 2em);
+  float: left;
+  -webkit-border-radius: 2em;
+          border-radius: 2em; }
+
+.shapes-basic .polygon {
+  -webkit-clip-path: polygon(0 0, 0 7.5em, 7.5em 3.75em);
+          clip-path: polygon(0 0, 0 7.5em, 7.5em 3.75em);
+  -webkit-shape-outside: polygon(0 0, 0 7.5em, 7.5em 3.75em);
+          shape-outside: polygon(0 0, 0 7.5em, 7.5em 3.75em);
+  float: left; }
+
+.shapes-image {
+  width: 65%; }
+  .shapes-image img {
+    -webkit-shape-image-threshold: .5;
+            shape-image-threshold: .5;
+    -webkit-shape-margin: 0.1em;
+            shape-margin: 0.1em;
+    -webkit-shape-outside: url("img/beyonce.png");
+            shape-outside: url("img/beyonce.png");
+    float: left;
+    max-height: 65vmin; }

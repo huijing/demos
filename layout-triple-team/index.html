@@ -1,0 +1,216 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Layout triple team</title>
+  <meta name="description" content="Stripped down examples of Flexbox, Grid and Box alignment">
+  <meta name="author" content="Chen Hui Jing">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <h2>Flexbox basics</h2>
+  <div class="flex-basic">
+    <div class="box">Word</div>
+    <div class="box">This is a sentence.</div>
+    <div class="box">A rather short sentence.</div>
+  </div>
+  
+  <div class="flex-basic">
+    <div class="box">Word</div>
+    <div class="box">This is a sentence.</div>
+    <div class="box">For the purposes of this example, we need a paragraph. She must have hidden the plans in the escape pod.</div>
+  </div>
+
+  <hr>
+
+  <h2>Aligning flex items</h2>
+
+  <div class="flex-alignment">
+    <div class="box">1一</div>
+    <div class="box">2二</div>
+    <div class="box">3三</div>
+    <div class="box">4四</div>
+    <div class="box">5五</div>
+    <div class="box">6六</div>
+    <div class="box">7七</div>
+    <div class="box">8八</div>
+    <div class="box">9九</div>
+    <div class="box">10十</div>
+    <div class="box">11十一</div>
+    <div class="box">12十二</div>
+    <div class="box">13十三</div>
+    <div class="box">14十四</div>
+    <div class="box">15十五</div>
+    <div class="box">16十六</div>
+    <div class="box">17十七</div>
+    <div class="box">18十八</div>
+    <div class="box">19十九</div>
+    <div class="box">20二十</div>
+  </div>
+
+  <hr>
+
+  <h2>Flexbox use-cases</h2>
+
+  <h3>Auto-margins</h3>
+  <div class="flex-uc1">
+    <img src="img/box.svg" alt="Boxie the Box">
+  </div>
+
+  <h3>Navigation bar</h3>
+  <div class="flex-uc2">
+    <img src="img/box.svg" alt="Boxie the Box">
+    <a href="javascript:void(0)">Item 1</a>
+    <a href="javascript:void(0)">Item 2</a>
+    <a href="javascript:void(0)">Item 3</a>
+    <a href="javascript:void(0)">End link</a>
+  </div>
+
+  <h3>Card-style layout</h3>
+  <div class="flex-uc3">
+    <div class="card">
+      <img src="img/box.svg" alt="Boxie the Box">
+      <h4>Cards are popular?</h4>
+      <p>I mean, cards are cool. Sort of. But boxes are the coolest of all.</p>
+    </div>
+
+    <div class="card">
+      <img src="img/box.svg" alt="Boxie the Box">
+      <h4>Boxes more popular than cards</h4>
+      <p>Just look at that adorable face. Cards got nothing on that.</p>
+    </div>
+
+    <div class="card">
+      <img src="img/box.svg" alt="Boxie the Box">
+      <h4>Boxes versus Cards</h4>
+      <p>Look, coming up with non Lorem Ipsum takes brain power, of which I am lacking.</p>
+    </div>
+  </div>
+
+  <hr>
+
+  <h2>Grid basics</h2>
+  <div class="grid1">
+    <div class="box">Item A</div>
+    <div class="box">Item B</div>
+    <div class="box">Item C</div>
+    <div class="box">Item D</div>
+    <div class="box">Item E</div>
+    <div class="box">Item F</div>
+  </div>
+
+  <hr>
+
+  <h2>Grid auto-sizing</h2>
+  <div class="grid2">
+    <div class="box">Item A</div>
+    <div class="box">Item B</div>
+    <div class="box">Item C</div>
+    <div class="box">Item D</div>
+    <div class="box">Item E</div>
+    <div class="box">Item F</div>
+  </div>
+
+  <hr>
+
+  <h2>Content-based sizing</h2>
+  <div class="grid3">
+    <div class="box">Do we still like boxes?</div>
+    <div class="box">Do we still like boxes?</div>
+    <div class="box">Do we still like boxes?</div>
+  </div>
+
+  <hr>
+
+  <h2>Line-based placement</h2>
+  <div class="grid4">
+    <div class="box">
+      <p class="emoji">🍏</p>
+    </div>
+    <div class="box">
+      <p class="emoji">🍊</p>
+    </div>
+    <div class="box">
+      <p class="emoji">🥥</p>
+    </div>
+    <div class="box">
+      <p class="emoji">🥑</p>
+    </div>
+    <div class="box">
+      <p class="emoji">🍇</p>
+    </div>
+    <div class="box">
+      <p class="emoji">🍌</p>
+    </div>
+  </div>
+
+  <hr>
+
+  <h2>Naming grid areas</h2>
+  <div class="grid5">
+    <div class="box">Item A</div>
+    <div class="box">Item B</div>
+    <div class="box">Item C</div>
+  </div>
+
+  <hr>
+
+  <h2>Aligning grid items</h2>
+  <div class="grid6">
+    <div class="box">A</div>
+    <div class="box">B</div>
+    <div class="box">C</div>
+    <div class="box">D</div>
+  </div>
+
+  <hr>
+
+  <h2>CSSs - Basic</h2>
+
+  <div class="shapes-basic">
+    <article>
+      <div class="shapes circle"></div>
+      <p>Lollipop marshmallow lemon drops jujubes muffin fruitcake bonbon. Muffin carrot cake bear claw sweet roll tiramisu chocolate jelly beans toffee sweet roll. Biscuit candy sweet sweet powder tart bear claw. Tiramisu jelly beans apple pie donut topping dessert lemon drops gummies halvah.</p>
+      <p>Dessert pie dragée fruitcake chocolate oat cake donut muffin. Chocolate lemon drops cake muffin. Bonbon lemon drops chocolate fruitcake jujubes chupa chups sesame snaps sesame snaps pudding. Pastry chocolate jelly beans cake wafer.</p>
+    </article>
+    <article>
+      <div class="shapes ellipse"></div>
+      <p>Donut jelly toffee macaroon macaroon. Cookie sesame snaps chupa chups. Lollipop jelly lollipop brownie pastry gummi bears.</p>
+      <p>Gummi bears apple pie chupa chups jelly pie halvah pastry sweet. Cookie dessert sweet roll icing cheesecake macaroon wafer cheesecake. Toffee lemon drops apple pie fruitcake sweet roll chocolate cake jelly bear claw jelly. Donut tiramisu chocolate cake sesame snaps marshmallow tootsie roll candy canes cheesecake cotton candy.</p>
+    </article>
+    <article>
+      <div class="shapes inset"></div>
+      <p>Cake powder croissant lollipop cotton candy tiramisu lollipop tiramisu. Cookie candy canes gummies jujubes bonbon fruitcake ice cream gingerbread. Marzipan toffee carrot cake marshmallow danish cupcake jelly-o.</p>
+      <p>Halvah brownie lollipop. Chocolate cake marshmallow croissant muffin macaroon pastry. Gummies danish soufflé muffin gingerbread. Lollipop jelly cake croissant sesame snaps macaroon.</p>
+    </article>
+    <article>
+      <div class="shapes polygon"></div>
+      <p>Biscuit gummies tart gingerbread wafer jujubes sweet roll. Wafer oat cake carrot cake liquorice chocolate bar chocolate cake jelly-o. Pastry donut oat cake. Fruitcake candy apple pie cake tootsie roll cotton candy candy canes. Halvah halvah chocolate jelly-o macaroon.</p>
+      <p>Macaroon dessert sweet roll dragée candy. Sweet cheesecake lemon drops. Sweet tart chocolate cake candy canes powder cotton candy. Apple pie danish chocolate cake danish bonbon. Muffin soufflé topping carrot cake chocolate. Macaroon toffee chupa chups sesame snaps gummi bears.</p>
+    </article>
+  </div>
+
+  <hr>
+
+  <h2>CSS shapes - From image</h2>
+
+  <div class="shapes-image">
+    <img src="img/beyonce.png" alt="Beyoncé">
+    <p>Beyoncé Giselle Knowles-Carter is an American singer, songwriter, dancer and actress. Born and raised in Houston, Texas, Beyoncé performed in various singing and dancing competitions as a child. She rose to fame in the late 1990s as lead singer of the R&B girl-group Destiny's Child.</p>
+    <p>Managed by her father, Mathew Knowles, the group became one of the best-selling girl groups in history. Their hiatus saw Beyoncé's theatrical film debut in Austin Powers in Goldmember (2002) and the release of her first solo album, Dangerously in Love (2003). The album established her as a solo artist worldwide, debuting at number one on the US Billboard 200 chart and earning five Grammy Awards, and featured the Billboard Hot 100 number one singles "Crazy in Love" and "Baby Boy".</p>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+
+</html>
