@@ -36,6 +36,27 @@ img[src$=".svg"] {
   border: 1px solid;
 }
 
+.cs-min {
+  width: min-content;
+  margin-bottom: 1em;
+}
+
+.cs-max {
+  width: max-content;
+  margin-bottom: 1em;
+}
+
+.cs-fit {
+  width: fit-content(200px);
+  margin-bottom: 1em;
+}
+
+.cs-grid {
+  display: grid;
+  grid-template-columns: min-content max-content fit-content(200px);
+  margin-top: 0.5em;
+}
+
 .flex-basic {
   display: flex;
   margin-bottom: 1em;
@@ -149,12 +170,7 @@ img[src$=".svg"] {
   grid-template-columns: repeat(auto-fill, minmax(6em, 1fr));
 }
 
-.grid3 {
-  display: grid;
-  grid-template-columns: min-content max-content fit-content(300px);
-}
-
-[class^='grid4'] {
+[class^='grid3'] {
   display: grid;
   margin-bottom: 1em;
 
@@ -166,17 +182,17 @@ img[src$=".svg"] {
   .max { background-color: silver }
 }
 
-.grid4a { grid-template-columns: 2fr 4fr 2fr }
-.grid4b { grid-template-columns: auto auto auto }
-.grid4c { grid-template-columns: auto 1fr auto }
-.grid4d { grid-template-columns: 1fr auto 1fr }
-.grid4e { grid-template-columns: 1fr auto fit-content(200px) }
-.grid4f { grid-template-columns: fit-content(200px) auto minmax(200px, 400px) }
-.grid4g { grid-template-columns: 1fr auto minmax(200px, 400px) }
-.grid4h { grid-template-columns: fit-content(200px) minmax(200px, 400px) 400px }
-.grid4i { grid-template-columns: fit-content(200px) max-content auto }
+.grid3a { grid-template-columns: 2fr 4fr 2fr }
+.grid3b { grid-template-columns: auto auto auto }
+.grid3c { grid-template-columns: auto 1fr auto }
+.grid3d { grid-template-columns: 1fr auto 1fr }
+.grid3e { grid-template-columns: 1fr auto fit-content(200px) }
+.grid3f { grid-template-columns: fit-content(200px) auto minmax(200px, 400px) }
+.grid3g { grid-template-columns: 1fr auto minmax(200px, 400px) }
+.grid3h { grid-template-columns: fit-content(200px) minmax(200px, 400px) 400px }
+.grid3i { grid-template-columns: fit-content(200px) max-content auto }
 
-.grid5 {
+.grid4 {
   display: grid;
   grid-template-columns: repeat(6, 3em);
   grid-template-rows: repeat(6, 3em);
@@ -191,7 +207,7 @@ img[src$=".svg"] {
   }
 }
 
-.grid6 {
+.grid5 {
   display: grid;
   grid-template-columns: repeat(6, 3em);
   grid-template-rows: repeat(6, 3em);
@@ -207,7 +223,7 @@ img[src$=".svg"] {
   .box:nth-child(3) { grid-area: cherry }
 }
 
-.grid7 {
+.grid6 {
   height: 60vmin;
   width: 60vmin;
   display: grid;
@@ -242,61 +258,5 @@ img[src$=".svg"] {
 
   .box:nth-child(4) {
     grid-area: d;
-  }
-}
-
-.shapes-basic {
-  article {
-    margin-bottom: 1em;
-    clear: both;
-    min-height: 8em;
-    font-size: 70%;
-    width: 60%;
-  }
-
-  .shapes {
-    width: 7.5em;
-    height: 7.5em;
-    background-color: green;
-  }
-
-  .circle {
-    shape-outside: circle();
-    clip-path: circle();
-    float: left;
-    border-radius: 50%;
-  }
-
-  .ellipse {
-    shape-outside: ellipse();
-    clip-path: ellipse();
-    width: 5em;
-    float: left;
-    border-radius: 50%;
-  }
-
-  .inset {
-    shape-outside: inset(0px round 2em);
-    clip-path: inset(0px round 2em);
-    float: left;
-    border-radius: 2em;
-  }
-
-  .polygon {
-    clip-path: polygon(0 0, 0 7.5em, 7.5em 3.75em);
-    shape-outside: polygon(0 0, 0 7.5em, 7.5em 3.75em);
-    float: left;
-  }
-}
-
-.shapes-image {
-  width: 65%;
-
-  img {
-    shape-image-threshold: .5;
-    shape-margin: 0.1em;
-    shape-outside: url('img/beyonce.png');
-    float: left;
-    max-height: 65vmin;
   }
 }

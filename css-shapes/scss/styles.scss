@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+  font-size: calc(1em + 0.75vw);
+}
+
+body {
+  height: 100%;
+  padding: 1em;
+}
+
+h2 {
+  margin-bottom: 0.5em;
+}
+
+hr {
+  margin: 1em 0;
+}
+
+.shapes-basic {
+  article {
+    margin-bottom: 1em;
+    clear: both;
+    min-height: 8em;
+    font-size: 70%;
+    width: 60%;
+  }
+
+  .shapes {
+    width: 7.5em;
+    height: 7.5em;
+    background-color: green;
+  }
+
+  .circle {
+    shape-outside: circle();
+    clip-path: circle();
+    float: left;
+    border-radius: 50%;
+  }
+
+  .ellipse {
+    shape-outside: ellipse();
+    clip-path: ellipse();
+    width: 5em;
+    float: left;
+    border-radius: 50%;
+  }
+
+  .inset {
+    shape-outside: inset(0px round 2em);
+    clip-path: inset(0px round 2em);
+    float: left;
+    border-radius: 2em;
+  }
+
+  .polygon {
+    clip-path: polygon(0 0, 0 7.5em, 7.5em 3.75em);
+    shape-outside: polygon(0 0, 0 7.5em, 7.5em 3.75em);
+    float: left;
+  }
+}
+
+.shapes-image {
+  width: 65%;
+  margin-bottom: 2em;
+
+  img {
+    shape-image-threshold: .5;
+    shape-margin: 0.5em;
+    shape-outside: url('img/beyonce.png');
+    float: left;
+    max-height: 65vmin;
+  }
+}

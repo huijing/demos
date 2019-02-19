@@ -18,6 +18,21 @@
 </head>
 
 <body>
+  <h2>CSS sizing: content-based units</h2>
+  <div class="box cs-min">This is a <code>div</code> sized with <code>min-content</code>.</div>
+  <div class="box cs-max">This is a <code>div</code> sized with <code>max-content</code>.</div>
+  <div class="box cs-fit">This is a <code>div</code> sized with <code>fit-content(200px)</code>.</div>
+
+  <p>Support for these content-based units is most comprehensive in the grid formatting context, so this example should showcase the respective values correctly in a browser that supports Grid.</p>
+  
+  <div class="cs-grid">
+    <p class="box">This is a <code>p</code> element sized with <code>min-content</code>.</p>
+    <p class="box">This is a <code>p</code> element sized with <code>max-content</code>.</p>
+    <p class="box">This is a <code>p</code> element sized with <code>fit-content(200px)</code>.</p>
+  </div>
+
+  <hr>
+
   <h2>Flexbox basics</h2>
   <div class="flex-basic">
     <div class="box">Word</div>
@@ -138,65 +153,56 @@
 
   <hr>
 
-  <h2>Content-based sizing</h2>
-  <div class="grid3">
-    <div class="box">Content-based sizing is the new black.</div>
-    <div class="box">Content-based sizing is the new black.</div>
-    <div class="box">Content-based sizing is the new black.</div>
-  </div>
-
-  <hr>
-
   <h2>Flexible sizing</h2>
-  <div class="grid4a">
+  <div class="grid3a">
     <div class="box fr">Do we still like boxes?</div>
     <div class="box fr">Do we still like boxes?</div>
     <div class="box fr">Do we still like boxes?</div>
   </div>
 
-  <div class="grid4b">
+  <div class="grid3b">
     <div class="box auto">Do we still like boxes?</div>
     <div class="box auto">Do we still like boxes?</div>
     <div class="box auto">Do we still like boxes?</div>
   </div>
 
-  <div class="grid4c">
+  <div class="grid3c">
     <div class="box auto">Do we still like boxes?</div>
     <div class="box fr">Do we still like boxes?</div>
     <div class="box auto">Do we still like boxes?</div>
   </div>
 
-  <div class="grid4d">
+  <div class="grid3d">
     <div class="box fr">Do we still like boxes?</div>
     <div class="box auto">Do we still like boxes?</div>
     <div class="box fr">Do we still like boxes?</div>
   </div>
 
-  <div class="grid4e">
+  <div class="grid3e">
     <div class="box fr">Do we still like boxes?</div>
     <div class="box auto">Do we still like boxes?</div>
     <div class="box fit">Do we still like boxes?</div>
   </div>
 
-  <div class="grid4f">
+  <div class="grid3f">
     <div class="box fit">Do we still like boxes?</div>
     <div class="box auto">Do we still like boxes?</div>
     <div class="box minmax">Do we still like boxes?</div>
   </div>
 
-  <div class="grid4g">
+  <div class="grid3g">
     <div class="box fr">Do we still like boxes?</div>
     <div class="box auto">Do we still like boxes?</div>
     <div class="box minmax">Do we still like boxes?</div>
   </div>
 
-  <div class="grid4h">
+  <div class="grid3h">
     <div class="box fit">Do we still like boxes?</div>
     <div class="box minmax">Do we still like boxes?</div>
     <div class="box fixed">Do we still like boxes?</div>
   </div>
 
-  <div class="grid4i">
+  <div class="grid3i">
     <div class="box fit">Do we still like boxes?</div>
     <div class="box max">Do we still like boxes?</div>
     <div class="box auto">Do we still like boxes?</div>
@@ -205,7 +211,7 @@
   <hr>
 
   <h2>Line-based placement</h2>
-  <div class="grid5">
+  <div class="grid4">
     <div class="box">
       <p class="emoji">🍏</p>
     </div>
@@ -229,7 +235,7 @@
   <hr>
 
   <h2>Naming grid areas</h2>
-  <div class="grid6">
+  <div class="grid5">
     <div class="box">Item A</div>
     <div class="box">Item B</div>
     <div class="box">Item C</div>
@@ -238,51 +244,12 @@
   <hr>
 
   <h2>Aligning grid items</h2>
-  <div class="grid7">
+  <div class="grid6">
     <div class="box">A</div>
     <div class="box">B</div>
     <div class="box">C</div>
     <div class="box">D</div>
   </div>
-
-  <hr>
-
-  <h2>CSS shapes - Basic</h2>
-
-  <div class="shapes-basic">
-    <article>
-      <div class="shapes circle"></div>
-      <p>Lollipop marshmallow lemon drops jujubes muffin fruitcake bonbon. Muffin carrot cake bear claw sweet roll tiramisu chocolate jelly beans toffee sweet roll. Biscuit candy sweet sweet powder tart bear claw. Tiramisu jelly beans apple pie donut topping dessert lemon drops gummies halvah.</p>
-      <p>Dessert pie dragée fruitcake chocolate oat cake donut muffin. Chocolate lemon drops cake muffin. Bonbon lemon drops chocolate fruitcake jujubes chupa chups sesame snaps sesame snaps pudding. Pastry chocolate jelly beans cake wafer.</p>
-    </article>
-    <article>
-      <div class="shapes ellipse"></div>
-      <p>Donut jelly toffee macaroon macaroon. Cookie sesame snaps chupa chups. Lollipop jelly lollipop brownie pastry gummi bears.</p>
-      <p>Gummi bears apple pie chupa chups jelly pie halvah pastry sweet. Cookie dessert sweet roll icing cheesecake macaroon wafer cheesecake. Toffee lemon drops apple pie fruitcake sweet roll chocolate cake jelly bear claw jelly. Donut tiramisu chocolate cake sesame snaps marshmallow tootsie roll candy canes cheesecake cotton candy.</p>
-    </article>
-    <article>
-      <div class="shapes inset"></div>
-      <p>Cake powder croissant lollipop cotton candy tiramisu lollipop tiramisu. Cookie candy canes gummies jujubes bonbon fruitcake ice cream gingerbread. Marzipan toffee carrot cake marshmallow danish cupcake jelly-o.</p>
-      <p>Halvah brownie lollipop. Chocolate cake marshmallow croissant muffin macaroon pastry. Gummies danish soufflé muffin gingerbread. Lollipop jelly cake croissant sesame snaps macaroon.</p>
-    </article>
-    <article>
-      <div class="shapes polygon"></div>
-      <p>Biscuit gummies tart gingerbread wafer jujubes sweet roll. Wafer oat cake carrot cake liquorice chocolate bar chocolate cake jelly-o. Pastry donut oat cake. Fruitcake candy apple pie cake tootsie roll cotton candy candy canes. Halvah halvah chocolate jelly-o macaroon.</p>
-      <p>Macaroon dessert sweet roll dragée candy. Sweet cheesecake lemon drops. Sweet tart chocolate cake candy canes powder cotton candy. Apple pie danish chocolate cake danish bonbon. Muffin soufflé topping carrot cake chocolate. Macaroon toffee chupa chups sesame snaps gummi bears.</p>
-    </article>
-  </div>
-
-  <hr>
-
-  <h2>CSS shapes - From image</h2>
-
-  <div class="shapes-image">
-    <img src="img/beyonce.png" alt="Beyoncé">
-    <p>Beyoncé Giselle Knowles-Carter is an American singer, songwriter, dancer and actress. Born and raised in Houston, Texas, Beyoncé performed in various singing and dancing competitions as a child. She rose to fame in the late 1990s as lead singer of the R&B girl-group Destiny's Child.</p>
-    <p>Managed by her father, Mathew Knowles, the group became one of the best-selling girl groups in history. Their hiatus saw Beyoncé's theatrical film debut in Austin Powers in Goldmember (2002) and the release of her first solo album, Dangerously in Love (2003). The album established her as a solo artist worldwide, debuting at number one on the US Billboard 200 chart and earning five Grammy Awards, and featured the Billboard Hot 100 number one singles "Crazy in Love" and "Baby Boy".</p>
-  </div>
-
-  <script src="scripts.js"></script>
 </body>
 
 </html>

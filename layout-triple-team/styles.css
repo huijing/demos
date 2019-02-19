@@ -30,6 +30,28 @@ img[src$=".svg"] {
 .box {
   border: 1px solid; }
 
+.cs-min {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  margin-bottom: 1em; }
+
+.cs-max {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin-bottom: 1em; }
+
+.cs-fit {
+  width: fit-content(200px);
+  margin-bottom: 1em; }
+
+.cs-grid {
+  display: grid;
+  grid-template-columns: -webkit-min-content -webkit-max-content fit-content(200px);
+  grid-template-columns: min-content max-content fit-content(200px);
+  margin-top: 0.5em; }
+
 .flex-basic {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -141,80 +163,75 @@ img[src$=".svg"] {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(6em, 1fr)); }
 
-.grid3 {
-  display: grid;
-  grid-template-columns: -webkit-min-content -webkit-max-content fit-content(300px);
-  grid-template-columns: min-content max-content fit-content(300px); }
-
-[class^='grid4'] {
+[class^='grid3'] {
   display: grid;
   margin-bottom: 1em; }
-  [class^='grid4'] .fr {
+  [class^='grid3'] .fr {
     background-color: limegreen; }
-  [class^='grid4'] .auto {
+  [class^='grid3'] .auto {
     background-color: skyblue; }
-  [class^='grid4'] .minmax {
+  [class^='grid3'] .minmax {
     background-color: gold; }
-  [class^='grid4'] .fit {
+  [class^='grid3'] .fit {
     background-color: coral; }
-  [class^='grid4'] .fixed {
+  [class^='grid3'] .fixed {
     background-color: violet; }
-  [class^='grid4'] .max {
+  [class^='grid3'] .max {
     background-color: silver; }
 
-.grid4a {
+.grid3a {
   grid-template-columns: 2fr 4fr 2fr; }
 
-.grid4b {
+.grid3b {
   grid-template-columns: auto auto auto; }
 
-.grid4c {
+.grid3c {
   grid-template-columns: auto 1fr auto; }
 
-.grid4d {
+.grid3d {
   grid-template-columns: 1fr auto 1fr; }
 
-.grid4e {
+.grid3e {
   grid-template-columns: 1fr auto fit-content(200px); }
 
-.grid4f {
+.grid3f {
   grid-template-columns: fit-content(200px) auto minmax(200px, 400px); }
 
-.grid4g {
+.grid3g {
   grid-template-columns: 1fr auto minmax(200px, 400px); }
 
-.grid4h {
+.grid3h {
   grid-template-columns: fit-content(200px) minmax(200px, 400px) 400px; }
 
-.grid4i {
+.grid3i {
   grid-template-columns: fit-content(200px) -webkit-max-content auto;
   grid-template-columns: fit-content(200px) max-content auto; }
+
+.grid4 {
+  display: grid;
+  grid-template-columns: repeat(6, 3em);
+  grid-template-rows: repeat(6, 3em); }
+  .grid4 .box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+  .grid4 .emoji {
+    font-size: 2em;
+    margin: auto; }
 
 .grid5 {
   display: grid;
   grid-template-columns: repeat(6, 3em);
-  grid-template-rows: repeat(6, 3em); }
-  .grid5 .box {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex; }
-  .grid5 .emoji {
-    font-size: 2em;
-    margin: auto; }
-
-.grid6 {
-  display: grid;
-  grid-template-columns: repeat(6, 3em);
   grid-template-rows: repeat(6, 3em);
   grid-template-areas: 'apple apple apple . . .' 'apple apple apple . . .' 'apple apple apple banana banana .' '. . . banana banana .' '. . . . . . ' 'cherry cherry cherry cherry cherry cherry'; }
-  .grid6 .box:first-child {
+  .grid5 .box:first-child {
     grid-area: apple; }
-  .grid6 .box:nth-child(2) {
+  .grid5 .box:nth-child(2) {
     grid-area: banana; }
-  .grid6 .box:nth-child(3) {
+  .grid5 .box:nth-child(3) {
     grid-area: cherry; }
 
-.grid7 {
+.grid6 {
   height: 60vmin;
   width: 60vmin;
   display: grid;
@@ -231,64 +248,15 @@ img[src$=".svg"] {
   -webkit-box-align: normal;
       -ms-flex-align: normal;
           align-items: normal; }
-  .grid7 .box:first-child {
+  .grid6 .box:first-child {
     font-size: 2em;
     grid-area: a; }
-  .grid7 .box:nth-child(2) {
+  .grid6 .box:nth-child(2) {
     padding: 2em;
     grid-area: b; }
-  .grid7 .box:nth-child(3) {
+  .grid6 .box:nth-child(3) {
     padding: 0.5em;
     font-size: 1.5em;
     grid-area: c; }
-  .grid7 .box:nth-child(4) {
+  .grid6 .box:nth-child(4) {
     grid-area: d; }
-
-.shapes-basic article {
-  margin-bottom: 1em;
-  clear: both;
-  min-height: 8em;
-  font-size: 70%;
-  width: 60%; }
-
-.shapes-basic .shapes {
-  width: 7.5em;
-  height: 7.5em;
-  background-color: green; }
-
-.shapes-basic .circle {
-  shape-outside: circle();
-  -webkit-clip-path: circle();
-          clip-path: circle();
-  float: left;
-  border-radius: 50%; }
-
-.shapes-basic .ellipse {
-  shape-outside: ellipse();
-  -webkit-clip-path: ellipse();
-          clip-path: ellipse();
-  width: 5em;
-  float: left;
-  border-radius: 50%; }
-
-.shapes-basic .inset {
-  shape-outside: inset(0px round 2em);
-  -webkit-clip-path: inset(0px round 2em);
-          clip-path: inset(0px round 2em);
-  float: left;
-  border-radius: 2em; }
-
-.shapes-basic .polygon {
-  -webkit-clip-path: polygon(0 0, 0 7.5em, 7.5em 3.75em);
-          clip-path: polygon(0 0, 0 7.5em, 7.5em 3.75em);
-  shape-outside: polygon(0 0, 0 7.5em, 7.5em 3.75em);
-  float: left; }
-
-.shapes-image {
-  width: 65%; }
-  .shapes-image img {
-    shape-image-threshold: .5;
-    shape-margin: 0.1em;
-    shape-outside: url("img/beyonce.png");
-    float: left;
-    max-height: 65vmin; }
