@@ -101,7 +101,7 @@ label {
   display: none;
 }
 
-@supports (display: grid) and (not(display: -ms-grid)) {
+@supports (display: grid) {
   main {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(15ch, 25ch));
@@ -187,7 +187,7 @@ label {
   }
 }
 
-@supports (animation: zoom 5s infinite) and (display: grid) and (not(display: -ms-grid)) {
+@supports (animation: zoom 5s infinite) and (display: grid) {
   @media screen and (min-width: 512px) {
     input {
       display: inline-block;
