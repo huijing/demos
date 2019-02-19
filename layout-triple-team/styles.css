@@ -43,13 +43,13 @@ img[src$=".svg"] {
   margin-bottom: 1em; }
 
 .cs-fit {
-  width: fit-content(200px);
+  width: fit-content(300px);
   margin-bottom: 1em; }
 
 .cs-grid {
   display: grid;
-  grid-template-columns: -webkit-min-content -webkit-max-content fit-content(200px);
-  grid-template-columns: min-content max-content fit-content(200px);
+  grid-template-columns: -webkit-min-content -webkit-max-content fit-content(300px);
+  grid-template-columns: min-content max-content fit-content(300px);
   margin-top: 0.5em; }
 
 .flex-basic {
@@ -180,7 +180,7 @@ img[src$=".svg"] {
     background-color: silver; }
 
 .grid3a {
-  grid-template-columns: 2fr 4fr 2fr; }
+  grid-template-columns: 1fr 2fr 1fr; }
 
 .grid3b {
   grid-template-columns: auto auto auto; }
