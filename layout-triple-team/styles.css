@@ -6,7 +6,6 @@ html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   height: 100%;
-  font-size: -webkit-calc(1em + 0.75vw);
   font-size: calc(1em + 0.75vw); }
 
 body {
@@ -33,63 +32,52 @@ img[src$=".svg"] {
 
 .flex-basic {
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   margin-bottom: 1em; }
 
 .flex-auto {
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   margin-bottom: 1em; }
   .flex-auto div:first-child {
     -webkit-box-flex: 1;
-    -webkit-flex: 1 0 auto;
         -ms-flex: 1 0 auto;
             flex: 1 0 auto; }
   .flex-auto div:nth-child(2) {
     -webkit-box-flex: 2;
-    -webkit-flex: 2 0 auto;
         -ms-flex: 2 0 auto;
             flex: 2 0 auto; }
   .flex-auto div:nth-child(3) {
     -webkit-box-flex: 0;
-    -webkit-flex: none;
         -ms-flex: none;
             flex: none; }
 
 .flex-zero {
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   margin-bottom: 1em; }
   .flex-zero div:first-child {
     -webkit-box-flex: 1;
-    -webkit-flex: 1;
         -ms-flex: 1;
             flex: 1; }
   .flex-zero div:nth-child(2) {
     -webkit-box-flex: 2;
-    -webkit-flex: 2;
         -ms-flex: 2;
             flex: 2; }
   .flex-zero div:nth-child(3) {
     -webkit-box-flex: 0;
-    -webkit-flex: 0 0 0;
         -ms-flex: 0 0 0px;
             flex: 0 0 0; }
 
 .flex-alignment {
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   margin-bottom: 1em; }
   .flex-alignment .box:nth-child(2n) {
     padding: 2em; }
@@ -102,7 +90,6 @@ img[src$=".svg"] {
 
 .flex-uc1 {
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   height: 60vh;
@@ -114,12 +101,10 @@ img[src$=".svg"] {
 
 .flex-uc2 {
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   margin-bottom: 1em;
   -webkit-box-align: center;
-  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
   gap: 1em; }
@@ -130,19 +115,16 @@ img[src$=".svg"] {
 
 .flex-uc3 {
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   gap: 1em;
   margin-bottom: 1em; }
   .flex-uc3 .card {
     display: -webkit-box;
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
     width: 12em;
@@ -214,7 +196,6 @@ img[src$=".svg"] {
   grid-template-rows: repeat(6, 3em); }
   .grid5 .box {
     display: -webkit-box;
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex; }
   .grid5 .emoji {
@@ -242,15 +223,12 @@ img[src$=".svg"] {
   grid-auto-rows: 10vmin;
   grid-template-areas: "a a b b" "a a b b" "c c d d" "c c d d";
   -webkit-box-pack: normal;
-  -webkit-justify-content: normal;
       -ms-flex-pack: normal;
           justify-content: normal;
-  -webkit-align-content: normal;
-      -ms-flex-line-pack: normal;
-          align-content: normal;
+  -ms-flex-line-pack: normal;
+      align-content: normal;
   justify-items: normal;
   -webkit-box-align: normal;
-  -webkit-align-items: normal;
       -ms-flex-align: normal;
           align-items: normal; }
   .grid7 .box:first-child {
@@ -279,48 +257,38 @@ img[src$=".svg"] {
   background-color: green; }
 
 .shapes-basic .circle {
-  -webkit-shape-outside: circle();
-          shape-outside: circle();
+  shape-outside: circle();
   -webkit-clip-path: circle();
           clip-path: circle();
   float: left;
-  -webkit-border-radius: 50%;
-          border-radius: 50%; }
+  border-radius: 50%; }
 
 .shapes-basic .ellipse {
-  -webkit-shape-outside: ellipse();
-          shape-outside: ellipse();
+  shape-outside: ellipse();
   -webkit-clip-path: ellipse();
           clip-path: ellipse();
   width: 5em;
   float: left;
-  -webkit-border-radius: 50%;
-          border-radius: 50%; }
+  border-radius: 50%; }
 
 .shapes-basic .inset {
-  -webkit-shape-outside: inset(0px round 2em);
-          shape-outside: inset(0px round 2em);
+  shape-outside: inset(0px round 2em);
   -webkit-clip-path: inset(0px round 2em);
           clip-path: inset(0px round 2em);
   float: left;
-  -webkit-border-radius: 2em;
-          border-radius: 2em; }
+  border-radius: 2em; }
 
 .shapes-basic .polygon {
   -webkit-clip-path: polygon(0 0, 0 7.5em, 7.5em 3.75em);
           clip-path: polygon(0 0, 0 7.5em, 7.5em 3.75em);
-  -webkit-shape-outside: polygon(0 0, 0 7.5em, 7.5em 3.75em);
-          shape-outside: polygon(0 0, 0 7.5em, 7.5em 3.75em);
+  shape-outside: polygon(0 0, 0 7.5em, 7.5em 3.75em);
   float: left; }
 
 .shapes-image {
   width: 65%; }
   .shapes-image img {
-    -webkit-shape-image-threshold: .5;
-            shape-image-threshold: .5;
-    -webkit-shape-margin: 0.1em;
-            shape-margin: 0.1em;
-    -webkit-shape-outside: url("img/beyonce.png");
-            shape-outside: url("img/beyonce.png");
+    shape-image-threshold: .5;
+    shape-margin: 0.1em;
+    shape-outside: url("img/beyonce.png");
     float: left;
     max-height: 65vmin; }

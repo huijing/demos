@@ -3,9 +3,6 @@ var browserSync = require('browser-sync');
 var sass        = require('gulp-sass');
 var prefix      = require('gulp-autoprefixer');
 var cssnano     = require('gulp-cssnano');
-var concat      = require('gulp-concat');
-var uglify      = require('gulp-uglify');
-var babel       = require('gulp-babel');
 
 /**
  * Launch the Server
@@ -44,30 +41,6 @@ gulp.task('sass-prod', function () {
 });
 
 /**
- * Compile files from js
- */
-gulp.task('scripts', function() {
-  return gulp.src(['js/*.js', 'js/custom.js'])
-  .pipe(babel({
-    presets: ['env']
-  }))
-  .pipe(concat('scripts.js'))
-  .pipe(gulp.dest('./'))
-  .pipe(browserSync.reload({stream:true}))
-});
-
-gulp.task('scripts-prod', function() {
-  return gulp.src(['js/*.js', 'js/custom.js'])
-  .pipe(babel({
-    presets: ['env']
-  }))
-  .pipe(concat('scripts.js'))
-  .pipe(uglify())
-  .pipe(gulp.dest('./'))
-  .pipe(browserSync.reload({stream:true}))
-});
-
-/**
  * Reload page when html changes
  */
 gulp.task('html', function () {
@@ -81,7 +54,6 @@ gulp.task('html', function () {
  */
 gulp.task('watch', function () {
   gulp.watch(['scss/*.scss'], ['sass']);
-  gulp.watch(['js/*.js'], ['scripts']);
   gulp.watch(['index.html'], ['html']);
 });
 
@@ -90,4 +62,4 @@ gulp.task('watch', function () {
  * compile the scripts, launch BrowserSync & watch files.
  */
 gulp.task('default', ['browser-sync', 'watch']);
-gulp.task('build', ['sass-prod', 'scripts-prod']);
+gulp.task('build', ['sass-prod']);

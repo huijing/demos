@@ -12,7 +12,6 @@
 
 body {
   font-family: "Volkhov", Georgia, serif;
-  font-size: -webkit-calc(1em + 0.5vw);
   font-size: calc(1em + 0.5vw);
   min-width: 20em; }
 

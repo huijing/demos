@@ -70,30 +70,24 @@ div[class$="item"] {
 @media screen and (min-width: 360px) {
   .flex {
     display: -webkit-box;
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-            flex-wrap: wrap; }
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
   .flex__item {
     -webkit-box-flex: 50%;
-    -webkit-flex: 50%;
         -ms-flex: 50%;
             flex: 50%; } }
 
 @media screen and (min-width: 720px) {
   .flex {
     display: -webkit-box;
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-            flex-wrap: wrap; }
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
   .flex__item {
     -webkit-box-flex: 25%;
-    -webkit-flex: 25%;
         -ms-flex: 25%;
             flex: 25%; } }
 
