@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Flexible sizing with CSS Grid</title>
+    <meta name="description" content="A comparison of “traditional” float-based sizing versus the newer content-based variable sizing now possible iwth CSS grid.">
+    <meta name="author" content="Chen Hui Jing">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="float">
+      <img src="img/florence.jpg" srcset="img/florence@2x.jpg 2x" alt="Florence and the Machine, live at Austin City Limits Festival">
+      <h1>The Liberation of Florence Welch</h1>
+      <p>How Florence and the Machine singer overcame personal demons to write her first-ever Number One album and bring it on the road for her biggest tour yet</p>
+    </div>
+
+    <hr>
+
+    <div class="grid">
+        <img src="img/florence.jpg" srcset="img/florence@2x.jpg 2x" alt="Florence and the Machine, live at Austin City Limits Festival">
+      <h1>The Liberation of Florence Welch</h1>
+      <p>How Florence and the Machine singer overcame personal demons to write her first-ever Number One album and bring it on the road for her biggest tour yet</p>
+    </div>
+  </body>
+
+</html>
