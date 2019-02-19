@@ -1,3 +1,3 @@
 # The layout triple-team
 
-A pared down demonstration of Flexbox, Grid and Box alignment.
+Pared-down examples for the usage of Flexbox, Grid, Box alignment. For use in explaning through DevTools. Also has Shapes if there is time available to cover it.
