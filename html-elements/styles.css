@@ -1,0 +1,205 @@
+@font-face {
+  font-family: 'Medula One';
+  src: url("fonts/medulaone-regular.woff2") format("woff2"), url("fonts/medulaone-regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 100%; }
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-size: calc(1em + 0.5vmin);
+  text-align: center;
+  padding: 1em;
+  font-family: Trebuchet MS, sans-serif; }
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 0.5em; }
+
+.elements {
+  font-family: 'Medula One', serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+  .elements a {
+    padding: 1em;
+    -webkit-box-flex: 0;
+        -ms-flex: none;
+            flex: none;
+    margin: 0.25em; }
+
+.root {
+  background-color: #7b9de1;
+  color: white; }
+
+.hover-root .root {
+  background-color: #fdb35f;
+  color: black; }
+
+.scripting {
+  background-color: #749eef;
+  color: white; }
+
+.hover-scripting .scripting {
+  background-color: #fdb35f;
+  color: black; }
+
+.int-elem {
+  background-color: #5186ed;
+  color: white; }
+
+.hover-int-elem .int-elem {
+  background-color: #fdb35f;
+  color: black; }
+
+.meta {
+  background-color: #2b6dec;
+  color: white; }
+
+.hover-meta .meta {
+  background-color: #fdb35f;
+  color: black; }
+
+.edits {
+  background-color: #155eea;
+  color: white; }
+
+.hover-edits .edits {
+  background-color: #fdb35f;
+  color: black; }
+
+.tab-data {
+  background-color: #024ee0;
+  color: white; }
+
+.hover-tab-data .tab-data {
+  background-color: #fdb35f;
+  color: black; }
+
+.grp-cont {
+  background-color: #0242bc;
+  color: white; }
+
+.hover-grp-cont .grp-cont {
+  background-color: #fdb35f;
+  color: black; }
+
+.emb-cont {
+  background-color: #00369c;
+  color: white; }
+
+.hover-emb-cont .emb-cont {
+  background-color: #fdb35f;
+  color: black; }
+
+.forms {
+  background-color: #0202ca;
+  color: white; }
+
+.hover-forms .forms {
+  background-color: #fdb35f;
+  color: black; }
+
+.sections {
+  background-color: #000080;
+  color: white; }
+
+.hover-sections .sections {
+  background-color: #fdb35f;
+  color: black; }
+
+.txt-lvl {
+  background-color: #010151;
+  color: white; }
+
+.hover-txt-lvl .txt-lvl {
+  background-color: #fdb35f;
+  color: black; }
+
+ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 2em 0;
+  gap: 0.5em; }
+
+li {
+  padding: 0.5em 1em; }
+
+dl div {
+  padding: 1em;
+  text-align: left;
+  display: none; }
+
+div:target {
+  display: block; }
+
+dt {
+  font-size: 1.25em;
+  margin-bottom: 0.5em; }
+
+p {
+  line-height: 1.3;
+  margin-bottom: 0.5em; }
+
+code {
+  font-family: monospace; }
+
+@supports (display: grid) {
+  .elements {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10ch, 1fr));
+    gap: 0.2em; }
+    .elements a {
+      padding: 1em 0; }
+  @media screen and (min-width: 1280px) {
+    .elements {
+      grid-template-columns: repeat(40, 5ch);
+      grid-template-rows: repeat(9, -webkit-max-content);
+      grid-template-rows: repeat(9, max-content); }
+      .elements a {
+        grid-column: span 2;
+        margin: 0; }
+    a.col5 {
+      grid-column: 9 / span 2; }
+    a.col8 {
+      grid-column: 15 / span 2; }
+    a.col11 {
+      grid-column: 21 / span 2; }
+    a.h1 {
+      grid-column: 27 / span 2; }
+    a.h4 {
+      grid-column: 24 / span 2; }
+    a.h3 {
+      grid-column: 25 / span 2; }
+    a.col15 {
+      grid-column: 29 / span 2; }
+    a.col20 {
+      grid-column: 39 / span 2; }
+    a.html {
+      grid-column: 20 / span 2; } } }
