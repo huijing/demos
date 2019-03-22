@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css?family=Gentium+Book+Basic');
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Gentium Book Basic', serif;
+}
+
+p {
+  line-height: 1.4;
+  margin-bottom: 1em;
+}
+
+img {
+  max-width: 100%;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  border: 0;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  transition: background-color 0.5s;
+}
+
+button:hover {
+  background-color: darkgrey;
+}
+
+h1 {
+  display: none;
+  margin: auto;
+}
+
+p {
+  display: none;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+h1.jsActive,
+.jsActive p {
+  display: block;
+}
+
+.grid {
+  border: 10px solid #ffff96;
+  width: 100%;
+}
+
+.grid > div {
+  border: 2px solid #ffff96;
+  background-color: #1b2b34;
+  padding: 1em;
+  color: #ffff96;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+}
+
+@media screen and (min-width: 440px) {
+  .grid {
+    display: grid;
+    grid-template-columns: min-content auto;
+    grid-template-rows: max-content auto;
+    grid-template-areas: 'title image'
+                         'nav image'
+                         'content content';
+  }
+  
+  .image { 
+    grid-area: image;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .title {
+    grid-area: title;
+    writing-mode: vertical-rl;
+    display: flex;
+  }
+
+  .content {
+    grid-area: content;
+  }
+
+  .nav {
+    grid-area: nav;
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 820px) {
+  .grid {
+    grid-template-columns: minmax(30em, 1fr) auto;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 'image title'
+                         'image content'
+                         'image nav';
+  }
+  
+  .title {
+    writing-mode: horizontal-tb;
+  }
+  
+  .nav {
+    flex-direction: row;
+  }
+}
