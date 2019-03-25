@@ -6,7 +6,7 @@ html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   height: 100%;
-  font-size: calc(1em + 0.75vw); }
+  font-size: 1.25em; }
 
 body {
   height: 100%;
