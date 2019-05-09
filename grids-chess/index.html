@@ -1,0 +1,82 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Animated Fool's Mate</title>
+  <meta name="description" content="Fool's Mate implemented with CSS Grid and animated grid rows and grid columns.">
+  <meta name="author" content="Chen Hui Jing">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <header>
+    <h1>Fool's Mate</h1>
+    <p>In chess, Fool's Mate, also known as the Two-Move Checkmate, is the checkmate in the fewest possible number of moves from the start of the game. This can be achieved only by Black, who can deliver checkmate on move 2 with the queen. Fool's Mate received its name because it can only occur if White commits an extraordinary blunder. Even among rank beginners, the mate almost never occurs in practice.</p>
+  </header>
+    
+  <main>
+    <div class="grid board">
+      <div class="grid__item piece">♜</div>
+      <div class="grid__item piece">♞</div>
+      <div class="grid__item piece">♝</div>
+      <div class="grid__item piece">♚</div>
+      <div class="grid__item piece">♝</div>
+      <div class="grid__item piece">♞</div>
+      <div class="grid__item piece">♜</div>
+      <div class="grid__item piece">♟</div>
+      <div class="grid__item piece">♟</div>
+      <div class="grid__item piece">♟</div>
+      <div class="grid__item piece">♟</div>
+      <div class="grid__item piece">♟</div>
+      <div class="grid__item piece">♟</div>
+      <div class="grid__item piece">♟</div>
+      <div class="grid__item piece row7">♙</div>
+      <div class="grid__item piece row7">♙</div>
+      <div class="grid__item piece row7">♙</div>
+      <div class="grid__item piece row7">♙</div>
+      <div class="grid__item piece row7">♙</div>
+      <div class="grid__item piece row7">♙</div>
+      <div class="grid__item piece row8">♖</div>
+      <div class="grid__item piece row8">♘</div>
+      <div class="grid__item piece row8">♗</div>
+      <div class="grid__item piece row8">♕</div>
+      <div class="grid__item piece row8">♔</div>
+      <div class="grid__item piece row8">♗</div>
+      <div class="grid__item piece row8">♘</div>
+      <div class="grid__item piece row8">♖</div>
+    </div>
+  
+    <div class="move1 grid">
+      <div class="piece"><span>♙</span></div>
+    </div>
+  
+    <div class="move2 grid">
+      <div class="piece"><span>♟</span></div>
+    </div>
+  
+    <div class="move3 grid">
+      <div class="piece"><span>♙</span></div>
+    </div>
+  
+    <div class="move4 grid">
+      <div class="piece"><span>♛</span></div>
+    </div>
+  </main>
+  
+  <div class="controls">
+    <button type="button" id="prev">Prev</button>
+    <button type="button" id="next">Next</button>
+  </div>
+  <script src="scripts.js"></script>
+</body>
+
+</html>
