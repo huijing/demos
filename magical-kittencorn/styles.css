@@ -59,8 +59,8 @@ p {
   height: 0;
   -webkit-animation: type 1s linear;
           animation: type 1s linear;
-  -webkit-animation-delay: 2.5s;
-          animation-delay: 2.5s;
+  -webkit-animation-delay: 1.9s;
+          animation-delay: 1.9s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards; }
 
@@ -72,8 +72,8 @@ p {
   height: 2em;
   -webkit-animation: sparkle 2s;
           animation: sparkle 2s;
-  -webkit-animation-delay: 4s;
-          animation-delay: 4s;
+  -webkit-animation-delay: 3.3s;
+          animation-delay: 3.3s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards; }
 
