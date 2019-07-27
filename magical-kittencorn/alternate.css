@@ -40,24 +40,22 @@ div {
   height: 50vmin; }
 
 .rainbow {
-  fill: #a3e048; }
+  fill: #d23be7; }
 
 p {
   font-size: calc(1.5em + 7vmin);
-  -webkit-writing-mode: vertical-rl;
-      -ms-writing-mode: tb-rl;
-          writing-mode: vertical-rl;
-  -webkit-text-orientation: upright;
-          text-orientation: upright;
   text-transform: uppercase;
-  overflow: hidden;
-  height: 0; }
+  text-align: center; }
+  p span {
+    display: block;
+    line-height: 1;
+    opacity: 0; }
 
 .sparkle {
   position: absolute;
   opacity: 0;
   top: 25%;
-  right: 35%;
+  left: 45%;
   height: 2em; }
 
 .animate .kittencorn {
@@ -70,7 +68,7 @@ p {
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards; }
 
-.animate p {
+.animate span:first-child {
   -webkit-animation: type 1s linear;
           animation: type 1s linear;
   -webkit-animation-delay: 1.9s;
@@ -78,71 +76,103 @@ p {
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards; }
 
+.animate span:nth-child(2) {
+  -webkit-animation: type 1s linear;
+          animation: type 1s linear;
+  -webkit-animation-delay: 2.5s;
+          animation-delay: 2.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards; }
+
+.animate span:nth-child(3) {
+  -webkit-animation: type 1s linear;
+          animation: type 1s linear;
+  -webkit-animation-delay: 3.1s;
+          animation-delay: 3.1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards; }
+
+.animate span:nth-child(4) {
+  -webkit-animation: type 1s linear;
+          animation: type 1s linear;
+  -webkit-animation-delay: 3.7s;
+          animation-delay: 3.7s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards; }
+
+.animate span:nth-child(5) {
+  -webkit-animation: type 1s linear;
+          animation: type 1s linear;
+  -webkit-animation-delay: 4.3s;
+          animation-delay: 4.3s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards; }
+
 .animate .sparkle {
   -webkit-animation: sparkle 2s;
           animation: sparkle 2s;
-  -webkit-animation-delay: 3.3s;
-          animation-delay: 3.3s;
+  -webkit-animation-delay: 5s;
+          animation-delay: 5s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards; }
 
 @-webkit-keyframes type {
   0% {
-    height: 0; }
+    opacity: 0; }
   100% {
-    height: 100%; } }
+    opacity: 1; } }
 
 @keyframes type {
   0% {
-    height: 0; }
+    opacity: 0; }
   100% {
-    height: 100%; } }
+    opacity: 1; } }
 
 @-webkit-keyframes rainbow {
   0% {
-    fill: #a3e048; }
+    fill: #d23be7; }
   14.3% {
-    fill: #f7d038; }
-  28.6% {
-    fill: #eb7532; }
-  42.9% {
-    fill: #e6261f; }
-  57.2% {
-    fill: #49da9a; }
-  71.5% {
-    fill: #34bbe6; }
-  85.8% {
     fill: #4355db; }
+  28.6% {
+    fill: #34bbe6; }
+  42.9% {
+    fill: #49da9a; }
+  57.2% {
+    fill: #e6261f; }
+  71.5% {
+    fill: #eb7532; }
+  85.8% {
+    fill: #f7d038; }
   100% {
-    fill: #d23be7; } }
+    fill: #a3e048; } }
 
 @keyframes rainbow {
   0% {
-    fill: #a3e048; }
+    fill: #d23be7; }
   14.3% {
-    fill: #f7d038; }
-  28.6% {
-    fill: #eb7532; }
-  42.9% {
-    fill: #e6261f; }
-  57.2% {
-    fill: #49da9a; }
-  71.5% {
-    fill: #34bbe6; }
-  85.8% {
     fill: #4355db; }
+  28.6% {
+    fill: #34bbe6; }
+  42.9% {
+    fill: #49da9a; }
+  57.2% {
+    fill: #e6261f; }
+  71.5% {
+    fill: #eb7532; }
+  85.8% {
+    fill: #f7d038; }
   100% {
-    fill: #d23be7; } }
+    fill: #a3e048; } }
 
 @-webkit-keyframes spin {
   100% {
-    -webkit-transform: rotate(720deg);
-            transform: rotate(720deg); } }
+    -webkit-transform: rotate(-720deg);
+            transform: rotate(-720deg); } }
 
 @keyframes spin {
   100% {
-    -webkit-transform: rotate(720deg);
-            transform: rotate(720deg); } }
+    -webkit-transform: rotate(-720deg);
+            transform: rotate(-720deg); } }
 
 @-webkit-keyframes sparkle {
   0% {

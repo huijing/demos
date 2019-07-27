@@ -40,23 +40,26 @@ div {
 }
 
 .rainbow {
-  fill: #a3e048;
+  fill: #d23be7;
 }
 
 p {
   font-size: calc(1.5em + 7vmin);
-  writing-mode: vertical-rl;
-  text-orientation: upright;
   text-transform: uppercase;
-  overflow: hidden;
-  height: 0;
+  text-align: center;
+
+  span {
+    display: block;
+    line-height: 1;
+    opacity: 0;
+  }
 }
 
 .sparkle {
   position: absolute;
   opacity: 0;
   top: 25%;
-  right: 35%;
+  left: 45%;
   height: 2em;
 }
 
@@ -68,38 +71,62 @@ p {
     animation-fill-mode: forwards;
   }
 
-  p {
+  span:first-child {
     animation: type 1s linear;
     animation-delay: 1.9s;
     animation-fill-mode: forwards;
   }
 
+  span:nth-child(2) {
+    animation: type 1s linear;
+    animation-delay: 2.5s;
+    animation-fill-mode: forwards;
+  }
+
+  span:nth-child(3) {
+    animation: type 1s linear;
+    animation-delay: 3.1s;
+    animation-fill-mode: forwards;
+  }
+
+  span:nth-child(4) {
+    animation: type 1s linear;
+    animation-delay: 3.7s;
+    animation-fill-mode: forwards;
+  }
+
+  span:nth-child(5) {
+    animation: type 1s linear;
+    animation-delay: 4.3s;
+    animation-fill-mode: forwards;
+  }
+
   .sparkle {
     animation: sparkle 2s;
-    animation-delay: 3.3s;
+    animation-delay: 5s;
     animation-fill-mode: forwards;
   }
 }
 
 @keyframes type { 
-  0% { height: 0 }
-  100% { height: 100% }
+  0% { opacity: 0 }
+  100% { opacity: 1 }
 }
 
 @keyframes rainbow { 
-  0% { fill: #a3e048 }
-  14.3% { fill: #f7d038 }
-  28.6% { fill: #eb7532 }
-  42.9% { fill: #e6261f } 
-  57.2% { fill: #49da9a }
-  71.5% { fill: #34bbe6 }
-  85.8% { fill: #4355db }
-  100% { fill: #d23be7 }
+  0% { fill: #d23be7 }
+  14.3% { fill: #4355db }
+  28.6% { fill: #34bbe6 }
+  42.9% { fill: #49da9a } 
+  57.2% { fill: #e6261f }
+  71.5% { fill: #eb7532 }
+  85.8% { fill: #f7d038 }
+  100% { fill: #a3e048 }
 }
 
 @keyframes spin { 
   100% { 
-    transform: rotate(720deg);
+    transform: rotate(-720deg);
   } 
 }
 
