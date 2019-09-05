@@ -1,8 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Gentium+Book+Basic");
 html {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  height: 100%; }
+          box-sizing: border-box; }
 
 *,
 *:before,
@@ -22,7 +21,10 @@ p {
   margin-bottom: 1em; }
 
 img {
-  max-width: 100%; }
+  max-width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  height: 100%; }
 
 button {
   font-family: inherit;
@@ -52,11 +54,10 @@ h1.jsActive,
   display: block; }
 
 .grid {
-  border: 10px solid #ffff96;
-  width: 100%; }
+  padding: 10px;
+  background-color: #ffff96; }
 
 .grid > div {
-  border: 2px solid #ffff96;
   background-color: #1b2b34;
   padding: 1em;
   color: #ffff96; }
@@ -71,11 +72,14 @@ h1.jsActive,
 @media screen and (min-width: 440px) {
   .grid {
     display: grid;
-    grid-template-columns: -webkit-min-content auto;
-    grid-template-columns: min-content auto;
-    grid-template-rows: -webkit-max-content auto;
-    grid-template-rows: max-content auto;
-    grid-template-areas: 'title image' 'nav image' 'content content'; }
+    grid-template-columns: 6em calc(100% - 6.25em);
+    grid-template-rows: 45vh 25vh -webkit-max-content;
+    grid-template-rows: 45vh 25vh max-content;
+    grid-template-areas: 'title image' 'nav image' 'content content';
+    gap: 0.25em;
+    -webkit-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s; }
   .image {
     grid-area: image;
     display: -webkit-box;
@@ -97,7 +101,17 @@ h1.jsActive,
     display: -ms-flexbox;
     display: flex; }
   .content {
-    grid-area: content; }
+    grid-area: content;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
   .nav {
     grid-area: nav;
     -webkit-box-orient: vertical;
@@ -107,9 +121,11 @@ h1.jsActive,
 
 @media screen and (min-width: 820px) {
   .grid {
-    grid-template-columns: minmax(30em, 1fr) auto;
-    grid-template-rows: auto 1fr auto;
-    grid-template-areas: 'image title' 'image content' 'image nav'; }
+    grid-template-columns: 55% calc(45% - 0.5em);
+    grid-template-rows: 4em 1fr -webkit-max-content;
+    grid-template-rows: 4em 1fr max-content;
+    grid-template-areas: 'image title' 'image content' 'image nav';
+    gap: 0.5em; }
   .title {
     -webkit-writing-mode: horizontal-tb;
         -ms-writing-mode: lr-tb;

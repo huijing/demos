@@ -2,7 +2,6 @@
 
 html {
   box-sizing: border-box;
-  height: 100%;
 }
 
 *,
@@ -27,6 +26,8 @@ p {
 
 img {
   max-width: 100%;
+  object-fit: contain;
+  height: 100%;
 }
 
 button {
@@ -61,12 +62,11 @@ h1.jsActive,
 }
 
 .grid {
-  border: 10px solid #ffff96;
-  width: 100%;
+  padding: 10px;
+  background-color: #ffff96;
 }
 
 .grid > div {
-  border: 2px solid #ffff96;
   background-color: #1b2b34;
   padding: 1em;
   color: #ffff96;
@@ -80,11 +80,13 @@ h1.jsActive,
 @media screen and (min-width: 440px) {
   .grid {
     display: grid;
-    grid-template-columns: min-content auto;
-    grid-template-rows: max-content auto;
+    grid-template-columns: 6em calc(100% - 6.25em);
+    grid-template-rows: 45vh 25vh max-content;
     grid-template-areas: 'title image'
                          'nav image'
                          'content content';
+    gap: 0.25em;
+    transition: all 1s;
   }
   
   .image { 
@@ -102,6 +104,9 @@ h1.jsActive,
 
   .content {
     grid-area: content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .nav {
@@ -112,11 +117,12 @@ h1.jsActive,
 
 @media screen and (min-width: 820px) {
   .grid {
-    grid-template-columns: minmax(30em, 1fr) auto;
-    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 55% calc(45% - 0.5em);
+    grid-template-rows: 4em 1fr max-content;
     grid-template-areas: 'image title'
                          'image content'
                          'image nav';
+    gap: 0.5em;
   }
   
   .title {
