@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css?family=Adamina|Permanent+Marker|Rasa&display=swap");
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 100%; }
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+  margin: 0;
+  padding: 0; }
+
+img {
+  max-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 26%;
+     object-position: 26%;
+  height: 100%; }
+
+main {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: minmax(20%, 20em) auto fit-content(15em);
+  grid-template-rows: 30vmin -webkit-min-content -webkit-max-content auto;
+  grid-template-rows: 30vmin min-content max-content auto; }
+
+main::before {
+  content: '';
+  grid-column: 2;
+  grid-row: 1 / -2;
+  background-color: red; }
+
+img {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 3;
+  mix-blend-mode: difference; }
+
+h1 {
+  font-family: 'Permanent Marker', cursive;
+  font-size: calc(1.5em + 2.5vw);
+  padding: 0.25em;
+  grid-column: 2 / span 3;
+  grid-row: 2;
+  text-align: right;
+  position: relative; }
+
+.intro {
+  font-family: 'Adamina', serif;
+  font-size: calc(1em + 1vmin);
+  grid-row: 3;
+  color: #444;
+  margin-bottom: 1em;
+  padding-left: 1em;
+  line-height: 1.4; }
+
+div {
+  font-family: 'Rasa', serif;
+  grid-column: 1 / -1;
+  grid-row: 4;
+  margin: 1em;
+  font-size: 115%; }
+  div p {
+    margin-bottom: 1em; }
