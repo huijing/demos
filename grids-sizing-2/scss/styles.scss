@@ -1,4 +1,26 @@
-@import url('https://fonts.googleapis.com/css?family=Adamina|Permanent+Marker|Rasa&display=swap');
+@font-face {
+  font-family: 'Permanent Marker';
+  src: url('fonts/permanentmarker.woff2') format('woff2'),
+       url('fonts/permanentmarker.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Adamina';
+  src: url('fonts/adamina-regular.woff2') format('woff2'),
+       url('fonts/adamina-regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rasa';
+  src: url('fonts/rasa-regular.woff2') format('woff2'),
+       url('fonts/rasa-regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
 html {
   box-sizing: border-box;
@@ -44,7 +66,7 @@ h1 {
   font-family: 'Permanent Marker', cursive;
   font-size: calc(1.5em + 2.5vw);
   padding: 0.25em;
-  grid-column: 2 / span 3;
+  grid-column: 2 / span 2;
   grid-row: 2;
   text-align: right;
   position: relative;
