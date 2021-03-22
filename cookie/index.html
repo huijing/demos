@@ -1,0 +1,97 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Cookie Adventures 🍪</title>
+  <meta name="description" content="Do you know how browser cookies work? I sure didn't before this.">
+  <meta name="author" content="Chen Hui Jing">
+
+  <style>
+    body {
+      display: flex;
+      text-align: center;
+    }
+
+    main {
+      margin: auto;
+    }
+
+    div {
+      margin-top: 1em;
+    }
+  </style>
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <main>
+    <button onclick="resetCookie()">Reset cookie</button>
+    <button onclick="init()">Set cookie</button>
+    <div id="log">No cookie set.</div>
+  </main>
+
+  <script>
+    function getCookie(cookieName) {
+      var regexp = new RegExp('(?:^|; )' + cookieName + '=([^;]*)(?:$|; )');
+      var match = document.cookie.match(regexp);
+      return match ? decodeURIComponent(match[1]) : '';
+    }
+
+    function init() {
+      var assignment = getCookie('variant');
+      if (assignment === '') {
+        assignGroup();
+      } else {
+        changeSomething(assignment);
+      }
+    }
+
+    function assignGroup() {
+      var rand = Math.random();
+      if (rand < 0.5) {
+        document.cookie = "variant=groupA;samesite=lax;";
+      } else {
+        document.cookie = "variant=groupB;samesite=lax;";
+      }
+      init();
+    }
+
+    function changeSomething(assignment) {
+      switch (assignment) {
+        case 'groupA':
+          const markupA = `
+            <h2>🍪 has been set</h2>
+            <p>document.cookie: <code>${document.cookie}</code></p>
+          `;
+          displayMessage(markupA);
+          break;
+        case 'groupB':
+          const markupB = `
+            <h2>🥠 has been set</h2>
+            <p>document.cookie: <code>${document.cookie}</code></p>
+          `;
+          displayMessage(markupB);
+          break;
+        default:
+          displayMessage('No cookie');
+      }
+    }
+
+    function displayMessage(markup) {
+      document.getElementById('log').innerHTML = markup;
+    }
+
+    function resetCookie() {
+      document.cookie = "variant= ;expires=Thu, 01 Jan 1970 00:00:00 GMT;samesite=lax"
+      displayMessage('No cookie set.');
+    }
+  </script>
+</body>
+
+</html>
