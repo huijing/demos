@@ -1,0 +1,33 @@
+html {
+  box-sizing: border-box;
+  block-size: 100%;
+  writing-mode: vertical-rl;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  block-size: 100%;
+  background: gold;
+  display: flex;
+}
+
+main {
+  margin: auto;
+  text-align: center;
+  display: flex;
+  block-size: 100%;
+  gap: 1em;
+}
+
+p {
+  background: tomato;
+  color: white;
+  font-size: 200%;
+}
