@@ -1,0 +1,43 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>background-clip: text</title>
+  <meta name="description" content="Unprefixed background-clip:text example">
+  <meta name="author" content="Chen Hui Jing">
+
+  <style>
+    .highlight {
+      background-image: linear-gradient(to right, midnightblue, darkturquoise);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    body {
+      display: flex;
+      min-height: 100vh;
+      padding: 0 1em;
+    }
+
+    h1 {
+      margin: auto;
+      font-size: 4em;
+      max-width: 1000px;
+    }
+  </style>
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <h1>Garnbret takes first ever boulder & lead title, <span class="highlight">goes 3 for 3 at Munich 2022</span></h1>
+</body>
+
+</html>
