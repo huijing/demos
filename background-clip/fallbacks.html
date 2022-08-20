@@ -7,15 +7,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>background-clip: text</title>
-  <meta name="description" content="Unprefixed background-clip:text example">
+  <meta name="description" content="background-clip: text implementation with full fallbacks">
   <meta name="author" content="Chen Hui Jing">
 
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@600&display=swap');
+
     @supports (background-clip: text) {
       .highlight {
-        font-family: Times New Roman;
+        font-family: 'DynaPuff', serif;
         display: inline;
-        background-image: linear-gradient(to right, black 0%, black 62.5%, midnightblue 62.5%, darkturquoise);
+        background-image: linear-gradient(to right, black 0%, black 63.5%, midnightblue 63.5%, darkturquoise);
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
