@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #39393B;
+  min-width: 22.5em;
+}
+
+img {
+  max-width: 100%;
+}
+
+header {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 1em;
+  text-align: center;
+  color: #fff;
+  background-color: rgba(30, 40, 49, 0.75);
+
+  h1 {
+    margin-bottom: 0.25em;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+main {
+  padding: 15%;
+  color: white;
+}
+
+section {
+  position: relative;
+  max-width: 65em;
+  margin: auto;
+
+  h2 {
+    font-family: 'Fjalla One', sans-serif;
+    text-transform: uppercase;
+    width: min-content;
+    letter-spacing: 0.25em;
+  }
+
+  img {
+    width: 75%;
+    object-fit: cover;
+    object-position: top;
+    z-index: -1;
+  }
+}
+
+.position {
+  h2 {
+    font-size: calc(2em + 4vw);
+  }
+
+  p {
+    position: absolute;
+    top: 60%;
+    left: calc(4em + 5vw);
+  } 
+
+  img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%
+  }
+}
+
+@media screen and (max-width: 573px) {
+  .position p {
+    top: 55%;
+  }
+}
+
+// .margin {
+//   section {
+//     text-align: right;
+//   }
+
+//   h2 {
+//     text-align: left;
+//     font-size: 5em;
+//   }
+
+//   p {
+//     text-align: left;
+//     margin-top: -10em;
+//     margin-left: 8em;
+//   }
+
+//   img {
+//     text-align: right;
+//     margin-top: -3.25em;
+//     position: relative;
+//     font-size: 5em;
+//     height: 5em;
+//   }
+// }
+
+// @media screen and (max-width: 549px) {
+//   .margin {
+//     h2 {
+//       font-size: 3.5em;
+//     }
+//     p {
+//       margin-top: -8em;
+//       margin-left: 6em;
+//     }
+//     img {
+//       height: 3.5em;
+//       margin-top: -2.4em;
+//     }
+//   }
+// }
+
+// @media screen and (min-width: 550px) and (max-width: 601px) {
+//   .margin {
+//     p {
+//       margin-top: -10.5em;
+//     }
+//   }
+// }
+
+.transform {
+  section {
+    text-align: right;
+  }
+
+  h2 {
+    text-align: left;
+    font-size: 5em;
+  }
+
+  p {
+    text-align: left;
+    transform: translate(8em, -10em);
+  }
+
+  img {
+    text-align: right;
+    transform: translateY(-5.25em);
+    position: relative;
+    font-size: 5em;
+    height: 5em;
+  }
+}
+
+@media screen and (max-width: 549px) {
+  .transform {
+    h2 {
+      font-size: 3.5em;
+    }
+    p {
+      transform: translate(6em, -7.75em);
+      width: calc(100% - 6em)
+    }
+    img {
+      height: 3.5em;
+      transform: translateY(-4em);
+    }
+  }
+}
+
+.grid {
+  --font-size: calc(2em + 4vw);
+
+  section {
+    display: grid;
+    font-size: --font-size;
+    grid-template-columns: calc(1.75 * var(--font-size)) var(--font-size) 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+  }
+
+  h2 {
+    grid-row: 1 / -1;
+    grid-column: 1 / span 2;
+    font-size: var(--font-size);
+  }
+
+  p {
+    font-size: 16px;
+    grid-column: 2 / -1;
+    grid-row: 2;
+    margin-top: calc(0.5 * var(--font-size));
+    align-self: start;
+  }
+
+  img {
+    grid-column: span 3 / -1;
+    grid-row: 1 / -1;
+    width: 100%;
+    height: 100%;
+    max-height: 30em;
+  }
+}
+
+@media screen and (max-width: 554px) {
+  .grid {
+    p {
+      margin-top: 1em;
+    }
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .grid {
+    --font-size: 5em;
+
+    section {
+      font-size: initial;
+    }
+  }
+}

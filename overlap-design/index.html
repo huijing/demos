@@ -1,0 +1,57 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Overlap in web design</title>
+  <meta name="description" content="Demo showing different techniques for doing overlap in web design">
+  <meta name="author" content="Chen Hui Jing">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <p>Section height: <span id="jsSectionHeight">-</span>px</p>
+  <aside>
+    <label for="position">
+      <input type="radio" id="position" name="switcher" value="position" checked />
+      <span>Absolute positioning</span>
+    </label>
+    <label for="margin">
+      <input type="radio" id="margin" name="switcher" value="margin" />
+      <span>Negative margins</span>
+    </label>
+    <label for="transform">
+      <input type="radio" id="transform" name="switcher" value="transform" />
+      <span>CSS translate</span>
+    </label>
+    <label for="grid">
+      <input type="radio" id="grid" name="switcher" value="grid" />
+      <span>CSS grid</span>
+    </label>
+  </aside>
+  <main class="position">
+    <section>
+      <img class="corner-img" src="img/corner.svg" alt="3 boxies hanging out">
+      <h2>
+        <span>Boxes</span>
+        <span>are the backbone of the web</span>
+      </h2>
+      <div class="layout-wrapper">
+        <img class="bottom-img" src="img/boxmodel.svg" alt="Do you box model?">
+        <p>Honestly, I just needed some text here.</p>
+        <button type="button">¯\_(ツ)_/¯</button>
+      </div>
+    </section>
+  </main>
+  <script src="scripts.js"></script>
+</body>
+
+</html>

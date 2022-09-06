@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-width: 360px;
+  font-size: 125%;
+}
+
+img {
+  max-width: 100%;
+}
+
+aside {
+  font-size: smaller;
+  position: fixed;
+  bottom: 0;
+  padding: 1em;
+  text-align: center;
+  display: flex;
+  width: 100%;
+
+  label {
+    flex: 1 1 0;
+    cursor: pointer;
+  }
+}
+
+main {
+  padding: 1em;
+  background-color: mintcream;
+
+  section {
+    max-width: 45em;
+    margin: auto;
+    position: relative;
+  }
+
+  .corner-img {
+    max-width: 400px;
+  }
+
+  h2 {
+    span:first-of-type {
+      font-size: 4em;
+      display: block;
+      line-height: 1;
+    }
+
+    span:nth-of-type(2) {
+      font-size: 1.5em;
+    }
+  }
+
+  .layout-wrapper {
+    text-align: center;
+  }
+
+  .bottom-img {
+    max-width: 140px;
+  }
+  
+  p {
+    margin: 1em 0;
+  }
+
+  button {
+    border: 0;
+    background-color: darkgreen;
+    color: white;
+    padding: 0.5em 1em;
+    border-radius: 2em;
+    cursor: pointer;
+    width: max-content;
+  }
+
+  @media screen and (min-width: 600px) {
+    .layout-wrapper {
+      display: flex;
+      align-items: center;
+      text-align: initial;
+    }
+
+    .bottom-img {
+      margin-right: 1em;
+    }
+  
+    p {
+      text-align: center;
+      margin: auto;
+    }
+  
+    button {
+      margin-left: 1em;
+    }
+  }
+}
+
+.position {
+  .corner-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  h2 {
+    padding-top: 5em;
+    margin-bottom: 2em;
+  }
+}
+
+.margin {
+  .corner-img {
+    float: right;
+  }
+
+  h2 {
+    float: left;
+    margin-top: -3.2em;
+    margin-bottom: 2em;
+  }
+
+  .layout-wrapper {
+    clear: both;
+  }
+}
+
+.transform {
+  section {
+    text-align: right;
+  }
+
+  h2 {
+    text-align: left;
+    transform: translateY(-3.4em);
+  }
+
+  .layout-wrapper {
+    transform: translateY(-2.1em);
+  }
+}
+
+
+.grid {
+  section {
+    display: grid;
+    grid-template-columns: 1fr 420px 1fr;
+    grid-template-rows: auto 4.75em auto 1fr;
+  }
+
+  .corner-img {
+    grid-column: 2 / 4;
+    grid-row: 1 / span 2;
+    justify-self: end;
+  }
+
+  h2 {
+    grid-column: 1 / -1;
+    grid-row: 2 / span 2;
+    margin-bottom: 2em;
+  }
+
+  .layout-wrapper {
+    grid-column: 1 / -1;
+    grid-row: 4;
+  }
+}
