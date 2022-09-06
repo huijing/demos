@@ -91,54 +91,54 @@ section {
   }
 }
 
-// .margin {
-//   section {
-//     text-align: right;
-//   }
+.margin {
+  section {
+    text-align: right;
+  }
 
-//   h2 {
-//     text-align: left;
-//     font-size: 5em;
-//   }
+  h2 {
+    text-align: left;
+    font-size: 5em;
+  }
 
-//   p {
-//     text-align: left;
-//     margin-top: -10em;
-//     margin-left: 8em;
-//   }
+  p {
+    text-align: left;
+    margin-top: -10em;
+    margin-left: 8em;
+  }
 
-//   img {
-//     text-align: right;
-//     margin-top: -3.25em;
-//     position: relative;
-//     font-size: 5em;
-//     height: 5em;
-//   }
-// }
+  img {
+    text-align: right;
+    margin-top: -3.25em;
+    position: relative;
+    font-size: 5em;
+    height: 5em;
+  }
+}
 
-// @media screen and (max-width: 549px) {
-//   .margin {
-//     h2 {
-//       font-size: 3.5em;
-//     }
-//     p {
-//       margin-top: -8em;
-//       margin-left: 6em;
-//     }
-//     img {
-//       height: 3.5em;
-//       margin-top: -2.4em;
-//     }
-//   }
-// }
+@media screen and (max-width: 549px) {
+  .margin {
+    h2 {
+      font-size: 3.5em;
+    }
+    p {
+      margin-top: -8em;
+      margin-left: 6em;
+    }
+    img {
+      height: 3.5em;
+      margin-top: -2.4em;
+    }
+  }
+}
 
-// @media screen and (min-width: 550px) and (max-width: 601px) {
-//   .margin {
-//     p {
-//       margin-top: -10.5em;
-//     }
-//   }
-// }
+@media screen and (min-width: 550px) and (max-width: 601px) {
+  .margin {
+    p {
+      margin-top: -10.5em;
+    }
+  }
+}
 
 .transform {
   section {
