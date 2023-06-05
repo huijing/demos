@@ -1,0 +1,93 @@
+@font-face {
+  font-family: "Fraunces";
+  src: url("fonts/fraunces.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Movement";
+  src: url("fonts/movementv.ttf") format("truetype");
+}
+
+:root {
+  --soft: 0;
+  --opsz: 9;
+  --spac: 100;
+  --wght: 100;
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100%;
+  display: flex;
+}
+
+main {
+  margin: auto;
+  text-align: center;
+  width: 100%;
+}
+
+h1 {
+  font-size: 5em;
+}
+
+.fraunces {
+  font-family: "Fraunces", serif;
+  font-variation-settings: "SOFT" var(--soft), "opsz" var(--opsz);
+}
+
+.movement {
+  font-family: "Movement", sans-serif;
+  font-variation-settings: "SPAC" var(--spac), "wght" var(--wght);
+}
+
+.sliders {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  max-width: 50%;
+  margin: 1em auto;
+}
+
+.slider {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+}
+
+.input-soft::after {
+  display: block;
+  counter-reset: soft var(--soft);
+  content: counter(soft);
+}
+
+.input-opsz::after {
+  display: block;
+  counter-reset: opsz var(--opsz);
+  content: counter(opsz);
+}
+
+.input-spac::after {
+  display: block;
+  counter-reset: space var(--spac);
+  content: counter(space);
+}
+
+.input-wght::after {
+  display: block;
+  counter-reset: weight var(--wght);
+  content: counter(weight);
+}

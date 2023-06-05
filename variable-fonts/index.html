@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Variable fonts in action</title>
+    <meta
+      name="description"
+      content="Observe how a variable font morphs if its axes values change"
+    />
+    <meta name="author" content="Chen Hui Jing" />
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <main>
+      <section>
+        <h1 class="fraunces">Working with CSS</h1>
+        <div class="sliders">
+          <div class="slider">
+            <input
+              type="range"
+              id="soft"
+              name="soft"
+              min="0"
+              max="100"
+              value="0"
+            />
+            <label class="input-soft" for="soft">Softness</label>
+          </div>
+
+          <div class="slider">
+            <input
+              type="range"
+              id="opsz"
+              name="opsz"
+              min="9"
+              max="144"
+              value="9"
+            />
+            <label class="input-opsz" for="opsz">Optical Sizing</label>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h1 class="movement">Working with CSS</h1>
+        <div class="sliders">
+          <div class="slider">
+            <input
+              type="range"
+              id="space"
+              name="space"
+              min="100"
+              max="120"
+              value="100"
+            />
+            <label class="input-spac" for="space">Space</label>
+          </div>
+
+          <div class="slider">
+            <input
+              type="range"
+              id="weight"
+              name="weight"
+              min="100"
+              max="900"
+              value="100"
+            />
+            <label class="input-wght" for="weight">Weight</label>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="scripts.js"></script>
+  </body>
+</html>
