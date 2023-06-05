@@ -5,7 +5,6 @@ const opszInput = document.getElementById("opsz");
 const spacInput = document.getElementById("space");
 const wghtInput = document.getElementById("weight");
 softInput.addEventListener("input", function (event) {
-  console.log(event.target.value);
   document.documentElement.style.setProperty("--soft", event.target.value);
 });
 opszInput.addEventListener("input", function (event) {
