@@ -8,6 +8,11 @@
   src: url("fonts/movementv.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "Duplicate Sans";
+  src: url("fonts/duplicate_sans-bold.woff2") format("woff2");
+}
+
 :root {
   --soft: 0;
   --opsz: 9;
@@ -31,6 +36,8 @@ html {
 body {
   height: 100%;
   display: flex;
+  color: white;
+  background-color: black;
 }
 
 main {
@@ -40,7 +47,7 @@ main {
 }
 
 h1 {
-  font-size: 5em;
+  font-size: 8em;
 }
 
 .fraunces {
@@ -60,12 +67,18 @@ h1 {
   justify-items: center;
   max-width: 50%;
   margin: 1em auto;
+  font-family: "Duplicate Sans", sans-serif;
+  font-size: 1.5em;
 }
 
 .slider {
   display: flex;
   flex-direction: column;
   width: 75%;
+}
+
+input {
+  accent-color: #f55050;
 }
 
 .input-soft::after {
