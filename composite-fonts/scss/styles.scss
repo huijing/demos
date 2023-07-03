@@ -1,0 +1,39 @@
+@font-face {
+  font-family: "Raleway";
+  src: url("fonts/raleway-regular.woff2") format("woff2");
+  /* no range specified, defaults to entire range */
+}
+
+/* prettier-ignore */
+@font-face {
+  font-family: "Raleway";
+  src: url("fonts/comfortaa_regular.woff2") format("woff2");
+  unicode-range: U+0400-04FF; /* Unicode range for Cyrillic characters */
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Raleway", Arial, Helvetica, sans-serif;
+  display: flex;
+  height: 100%;
+}
+
+p {
+  text-align: center;
+  font-size: 4em;
+  margin: auto;
+  max-width: 12em;
+  padding: 1rem;
+}
