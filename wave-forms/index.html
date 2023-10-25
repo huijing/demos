@@ -1,0 +1,43 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Audio visualisations</title>
+    <meta name="description" content="Visualisations from the Web Audio API">
+    <meta name="author" content="Chen Hui Jing">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+
+  <body>
+    <header>
+      <h1>Visualisation experiments with Web Audio API</h1>
+    </header>
+    <main>
+      <section>
+        <h2>Frequency Bar</h2>
+        <canvas class="frequency-bar" width="800" height="100"></canvas> 
+        <audio class="audio1" controls src="/audio/shoptalkshow-580.mp3"></audio>
+      </section>
+
+      <section>
+        <h2>Sine Wave</h2>
+        <canvas class="sine-wave" width="800" height="100"></canvas> 
+        <audio class="audio2" controls src="/audio/shoptalkshow-580.mp3"></audio>
+      </section>
+    </main>
+    <script src="scripts.js"></script>
+  </body>
+</html>
