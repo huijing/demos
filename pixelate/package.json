@@ -9,7 +9,7 @@
   "author": "Chen Hui Jing <1461498+huijing@users.noreply.github.com>",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.0.1",
+    "@babel/core": "^7.20.7",
     "@babel/preset-env": "^7.0.0",
     "@babel/register": "^7.0.0",
     "browser-sync": "^2.24.7",
